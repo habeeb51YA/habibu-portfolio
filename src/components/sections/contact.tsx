@@ -34,7 +34,7 @@ export const Contact = () => {
       const payload = await formSchema.parse(value);
       const { data } = await axios({
         method: "POST",
-        url: "https://formspree.io/f/mvojvlay",
+        url: `${process.env.NEXT_PUBLIC_FORMSPREE_KEY}`,
 
         headers: {
           "Content-type": "application/json",

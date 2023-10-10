@@ -7,17 +7,13 @@ export const Projects = () => {
   const Project = [
     {
       title: "First Active",
-      href: "https://www.firstactive365.com/",
+      href: `${process.env.FIRST_ACTIVE_URL}`,
       icon: "hh",
     },
-    // {
-    //   title: "Knextt",
-    //   href: "",
-    //   icon: "hh",
-    // },
+
     {
       title: "Bloco",
-      href: "https://bloco.co.uk/",
+      href: `${process.env.BLOCO_URL}`,
       icon: "hh",
     },
   ];
