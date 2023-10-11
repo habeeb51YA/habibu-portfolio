@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "habibu-portfolio",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
