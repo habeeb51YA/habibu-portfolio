@@ -56,7 +56,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu className="w-full h-8 mt-5 mb-5 flex justify-between">
+    <NavigationMenu className="w-full h-8 mt-5 mb-5 flex justify-between px-5">
       <NavigationMenuList className="">
         <NavigationMenuItem>
           <Link href="/home" legacyBehavior passHref>
@@ -68,7 +68,7 @@ export function NavigationMenuDemo() {
       </NavigationMenuList>
 
       <NavigationMenuList className=" ">
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link href="/home" legacyBehavior passHref>
             <NavigationMenuLink className={`${navigationMenuTriggerStyle()} `}>
               Home
@@ -102,7 +102,7 @@ export function NavigationMenuDemo() {
               project
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
           <NavigationMenuContent>

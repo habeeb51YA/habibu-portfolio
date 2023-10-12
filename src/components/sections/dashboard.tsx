@@ -1,10 +1,10 @@
 import React from "react";
+import { TitleHeading } from "../titleHeading";
 
 const Dashboard = () => {
   return (
     <div>
-      <div className="text-2xl  font-medium  mt-6 text-title"> About Me</div>
-      <div className=" mt-8 border-b-2 border-sub"></div>
+      <TitleHeading title="About Me" />
       <div className=" mt-6">
         <div className="text-[45px] text-title">
           Hello, I am Habibu Yusuf Abdulhamid
@@ -17,11 +17,11 @@ const Dashboard = () => {
 
         <div className="flex justify-between mt-16 text-xl font-normal">
           <div className="flex flex-col text-sub">
-            <div className="mb-6 ">AGE ....... 45</div>
+            <div className="mb-6 ">REMOTE WORK ....... AVAILABLE</div>
             <div>FREELANCE ....... AVAILABLE</div>
           </div>
           <div className="flex flex-col  text-sub">
-            <div className="mb-6 ">RECIDENCE ....... NIGERIA</div>
+            <div className="mb-6 ">RESIDENCE ....... NIGERIA</div>
             <div>ADDRESS ....... ABUJA, NIGERIA</div>
           </div>
         </div>

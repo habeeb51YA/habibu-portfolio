@@ -1,26 +1,12 @@
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  AtSign,
-  Linkedin,
-  Twitter,
-  Figma,
-  Gitlab,
-  School,
-  FileBadge2,
-  User,
-  Send,
-  BookOpenCheck,
-  Github,
-  Download,
-  FolderKanban,
-} from "lucide-react";
+import { Linkedin, Twitter, Send, Github, Download } from "lucide-react";
 import { handleScrollToSection } from "../sidenav";
 import { useTheme } from "next-themes";
 
 type IconProps = {
-  color: string;
+  color?: string;
   className: string;
   size?: number;
   onIconClick?: () => void;
@@ -110,10 +96,9 @@ export const Bio = () => {
                 <div key={id} className="mr-4">
                   <div>
                     {val.icon({
-                      color: "#d98d30",
                       className:
-                        "border-2 border-indigo-500 rounded-full  text-[130px] p-4 text-icon",
-                      size: 50,
+                        "border-2 text-icon border-indigo-500 rounded-full   p-4 text-icon",
+                      size: 55,
                     })}
                   </div>
                 </div>
@@ -126,14 +111,14 @@ export const Bio = () => {
               onClick={() => {}}
             >
               <span className=" mr-6 text-[20px] text-title">Download CV</span>
-              <Download color={"#d98d30"} size={20} />
+              <Download className="text-icon" size={20} />
             </div>
             <div
               className="flex items-center justify-center cursor-pointer p-4"
               onClick={() => handleScrollToSection("contact-section")}
             >
               <span className="text-[20px] mr-6 text-title"> Contact Me</span>{" "}
-              <Send color={"#d98d30"} size={20} />
+              <Send className="text-icon" size={20} />
             </div>
           </div>
         </div>

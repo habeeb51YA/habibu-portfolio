@@ -1,27 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  AtSign,
-  Linkedin,
-  Twitter,
-  Figma,
-  Gitlab,
-  School,
-  FileBadge2,
-  User,
-  Trophy,
-  Send,
-  BookOpenCheck,
-  Github,
-  FolderKanban,
-} from "lucide-react";
-import { useRouter } from "next/navigation";
-import { ModeToggle } from "./dropdown";
+import { School, FileBadge2, User, Trophy, Send } from "lucide-react";
 import { motion } from "framer-motion";
-// interface ISideNav {
-//   items: any[];
-// }
 
 export const handleScrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -31,47 +12,42 @@ export const handleScrollToSection = (sectionId: string) => {
 };
 
 export const Sidenav: React.FC = () => {
-  const router = useRouter();
   const items = [
-    // {
-    //   name: "Night Mode",
-    //   icon: <ModeToggle />,
-    // },
     {
       name: "Home",
-      icon: <User color={"#d98d30"} size={40} />,
+      icon: <User className="text-icon" size={40} />,
       // href: "/about",
       section: "dashboard-section",
     },
     {
       name: "Skills",
-      icon: <FileBadge2 color={"#d98d30"} size={40} />,
+      icon: <FileBadge2 className="text-icon" size={40} />,
       // href: "/skills",
       section: "skills-section",
     },
     {
       name: "About",
-      icon: <User color={"#d98d30"} size={40} />,
+      icon: <User className="text-icon" size={40} />,
       // href: "/about",
       section: "about-section",
     },
 
     {
-      name: "Expirence",
-      icon: <School color={"#d98d30"} size={40} />,
+      name: "Experience",
+      icon: <School className="text-icon" size={40} />,
       // href: "/expirence",
-      section: "expirence-section",
+      section: "experience-section",
     },
 
     {
       name: "Projects",
-      icon: <Trophy color={"#d98d30"} size={40} />,
+      icon: <Trophy className="text-icon" size={40} />,
       // href: "/resume",
       section: "project-section",
     },
     {
       name: "Contact",
-      icon: <Send color={"#d98d30"} size={40} />,
+      icon: <Send className="text-icon" size={40} />,
       // href: "/contacts",
       section: "contact-section",
     },
