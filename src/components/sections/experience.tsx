@@ -1,10 +1,8 @@
 import React from "react";
+import { TitleHeading } from "../titleHeading";
 
-// interface IWork {
-//   items?: any[];
-// }
-const Work: React.FC = () => {
-  const Experience = [
+const Experience: React.FC = () => {
+  const Experiences = [
     {
       company: "Feezino Unified Solution",
       title: "Experience",
@@ -26,22 +24,24 @@ const Work: React.FC = () => {
 
   return (
     <div>
-      <div className="text-2xl  font-medium  mt-6 text-title">
-        {" "}
-        Education <span className="text-sub">&</span> expirence
-      </div>
-      <div className=" mt-8 mb-8 border-b-2 border-indigo-500 "></div>
-      {Experience?.map((val, id) => {
+      <TitleHeading
+        title={
+          <div>
+            Education <span className="text-sub">&</span> Experience
+          </div>
+        }
+      />
+      {Experiences.map((val, id) => {
         return (
           <div key={id} className="">
             <div className="flex ">
               <div className="mr-12 border-l-2  border-indigo-500 mb-16"></div>
               <div>
                 {" "}
-                <div className="mt-1 text-2xl">{val?.title}</div>
-                <div className="mt-1 text-lg">{val.role}</div>
-                <div className="mt-1 text-base">{val.date}</div>
-                <div className="mt-2  mb-10 text-sm">{val.company}</div>
+                <div className="mt-1 text-[30px] text-sub">{val?.title}</div>
+                <div className="mt-1 text-[23px]">{val.role}</div>
+                <div className="mt-1 text-[19px]">{val.date}</div>
+                <div className="mt-2  mb-10 text-[17px]">{val.company}</div>
               </div>
             </div>
           </div>
@@ -51,4 +51,4 @@ const Work: React.FC = () => {
   );
 };
 
-export default Work;
+export default Experience;

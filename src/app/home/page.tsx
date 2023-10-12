@@ -3,29 +3,16 @@
 import React, { ReactNode } from "react";
 import { ModeToggle } from "../../components/dropdown";
 import { NavigationMenuDemo } from "@/components/navmenu";
-import {
-  AtSign,
-  Linkedin,
-  Twitter,
-  Figma,
-  Gitlab,
-  School,
-  FileBadge2,
-  User,
-  Send,
-  BookOpenCheck,
-  Github,
-  FolderKanban,
-} from "lucide-react";
 import Skills from "@/components/sections/skills";
 import Dashboard from "@/components/sections/dashboard";
-import Work from "@/components/work";
+import Work from "@/components/sections/experience";
 import { Sidenav } from "@/components/sidenav";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
 import { motion } from "framer-motion";
 import { Bio } from "@/components/sections/bio";
 import { Projects } from "@/components/sections/projects";
+import Experience from "@/components/sections/experience";
 
 const Home = () => {
   return (
@@ -50,10 +37,10 @@ const Home = () => {
             <section className="mt-[310px]" id="about-section">
               <About />
             </section>
-            <section className="mt-48" id="expirence-section">
-              <Work />
+            <section className="mt-48" id="experience-section">
+              <Experience />
             </section>
-            <section className="mt-48" id="expirence-section">
+            <section className="mt-48" id="project-section">
               <Projects />
             </section>
             <section className="mt-60 mb-60" id="contact-section">

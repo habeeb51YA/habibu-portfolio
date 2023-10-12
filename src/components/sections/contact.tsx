@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
+import { TitleHeading } from "../titleHeading";
 
 export const Contact = () => {
   const formSchema = z.object({
@@ -59,8 +60,7 @@ export const Contact = () => {
   return (
     <div>
       {" "}
-      <div className="text-2xl  font-medium  mt-6 text-title"> Contact</div>
-      <div className=" mt-8 mb-8 border-b-2 border-indigo-500 "></div>
+      <TitleHeading title="Contact" />
       <div className="">
         {" "}
         <Form {...form}>
