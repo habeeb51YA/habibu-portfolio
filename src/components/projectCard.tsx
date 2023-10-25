@@ -47,7 +47,7 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
           return (
             <div
               key={id}
-              className="flex items-center justify-center border border-1 border-sub rounded-xl "
+              className="flex items-center justify-center border border-1 border-icon rounded-xl "
             >
               <Link
                 href={project.href as string}
