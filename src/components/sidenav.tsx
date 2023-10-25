@@ -20,18 +20,17 @@ export const Sidenav: React.FC = () => {
       section: "dashboard-section",
     },
     {
-      name: "Skills",
-      icon: <FileBadge2 className="text-icon" size={40} />,
-      // href: "/skills",
-      section: "skills-section",
-    },
-    {
       name: "About",
       icon: <User className="text-icon" size={40} />,
       // href: "/about",
       section: "about-section",
     },
-
+    {
+      name: "Skills",
+      icon: <FileBadge2 className="text-icon" size={40} />,
+      // href: "/skills",
+      section: "skills-section",
+    },
     {
       name: "Experience",
       icon: <School className="text-icon" size={40} />,
@@ -64,7 +63,7 @@ export const Sidenav: React.FC = () => {
                 // animate={{ opacity: 1 }}
                 // transition={{ duration: 0.5 }}
                 onClick={() => handleScrollToSection(nav.section as string)}
-                className="rounded-md mb-4 shadow-sm shadow-primary flex flex-col h-[100px] w-[100px] items-center justify-center p-x-4 p-y-6 bg-background hover:bg-secondary"
+                className="rounded-md mb-4 shadow-sm shadow-primary flex flex-col h-[100px] w-[100px] items-center justify-center p-x-4 p-y-6 bg-input hover:bg-popover"
               >
                 <div className="h-[30px] w-[30] mb-4">{nav.icon}</div>
                 <div className="text-sm text-title">{nav.name}</div>

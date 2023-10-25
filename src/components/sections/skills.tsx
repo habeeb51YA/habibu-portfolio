@@ -77,11 +77,11 @@ const skills = () => {
               <div>
                 {val.icon({
                   className:
-                    "border-2 border-indigo-500 rounded-full  text-[130px] p-4 text-icon",
-                  size: 130,
+                    "border-2 hover:border-icon border-destructive-foreground rounded-full  text-[150px] p-8 text-icon ",
+                  size: 150,
                 })}
               </div>
-              <div className="mt-4 text-title">{val.title}</div>
+              <div className="mt-4 text-title text-[18px]">{val.title}</div>
             </div>
           );
         })}

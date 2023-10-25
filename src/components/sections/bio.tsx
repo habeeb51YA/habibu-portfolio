@@ -1,9 +1,12 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Linkedin, Twitter, Send, Github, Download } from "lucide-react";
+import { Linkedin, Twitter, Send, Github, Download, Mail } from "lucide-react";
 import { handleScrollToSection } from "../sidenav";
 import { useTheme } from "next-themes";
+import { getDownloadURL, ref } from "firebase/storage";
+import { projectStorage } from "@/services/firebase/config";
+import { ImageComponent } from "../image";
 
 type IconProps = {
   color?: string;
@@ -14,52 +17,86 @@ type IconProps = {
 
 type skillIconProps = {
   title: string;
-  icon: ({ className, color, onIconClick }: IconProps) => ReactNode;
+  icon: ({ className, color }: IconProps) => ReactNode;
 };
 
 export const Bio = () => {
+  const handleRedirect = (link: string) => {
+    return window.open(link, "_blank");
+  };
+
   const { theme, setTheme } = useTheme();
   const SkillIcons = [
     {
       title: "Linkedin",
-      icon: ({ className, color, size, onIconClick }: IconProps) => (
+      icon: ({ className, color, size }: IconProps) => (
         <Linkedin
           className={className}
           color={color}
           size={size}
-          onClick={() => onIconClick}
+          onClick={() => {
+            // handleRedirect(`${process.env.NEXT_PUBLIC_LINKEDIN_URL}`)
+            window.open(process.env.NEXT_PUBLIC_LINKEDIN_URL, "_blank");
+          }}
         />
       ),
     },
     {
       title: "Twitter",
-      icon: ({ className, color, size, onIconClick }: IconProps) => (
+      icon: ({ className, color, size }: IconProps) => (
         <Twitter
           className={className}
           color={color}
           size={size}
-          onClick={() => onIconClick}
+          onClick={() =>
+            handleRedirect(`${process.env.NEXT_PUBLIC_TWITTER_URL}`)
+          }
         />
       ),
     },
     {
       title: "Github",
-      icon: ({ className, color, size, onIconClick }: IconProps) => (
+      icon: ({ className, color, size }: IconProps) => (
         <Github
           className={className}
           color={color}
           size={size}
-          onClick={() => onIconClick}
+          onClick={() =>
+            handleRedirect(`${process.env.NEXT_PUBLIC_GITHUB_URL}`)
+          }
+        />
+      ),
+    },
+    {
+      title: "Mail",
+      icon: ({ className, color, size }: IconProps) => (
+        <Mail
+          className={className}
+          color={color}
+          size={size}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "mailto:habibuyusuf51@gmail.com";
+          }}
         />
       ),
     },
   ];
 
+  // const BackgroundReference = ref(
+  //   projectStorage,
+  //   "gs://habibu-portfolio.appspot.com/background1.jpg"
+  // );
+  // const getDownloadUrl = getDownloadURL(BackgroundReference).then((url) => {
+  //   const image = document.getElementById("myImg");
+  //   image?.setAttribute("src", url);
+  // });
+
   return (
     <div className="flex relative">
       {" "}
-      <div className=" bg-destructive opacity-10 h-[850px] w-[690px] rounded-md"></div>
-      <div className="bg-muted  h-[855px] w-[690px] absolute top-[20px] left-[25px] rounded-md">
+      <div className=" bg-card opacity-20 h-[850px] w-[690px] rounded-md"></div>
+      <div className="bg-input h-[855px] w-[690px] absolute top-[20px] left-[25px] rounded-md shadow-black shadow-md ">
         <div className="h-[460px] relative overflow-hidden">
           <Image
             className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
@@ -67,14 +104,14 @@ export const Bio = () => {
             alt="background_picture"
             width={690}
             height={100}
+            id="myImg"
           />
-
           <svg
             className="absolute top-[287px] left-0 w-100"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0,25 Q50,0 100,25 Z" fill="#1e293b" />
+            <path d="M0,25 Q50,0 100,25 Z" fill="#26262d" />
           </svg>
         </div>
         <div className="flex items-center justify-center mt-[-70px]">
@@ -89,7 +126,7 @@ export const Bio = () => {
 
         <div className="mt-12 flex flex-col items-center justify-center">
           <div className=" text-title text-[28px]">Habibu Yusuf Abdulhamid</div>
-          <div className="text-primary text-[18px]">Software Developer</div>
+          <div className="text-icon text-[18px]">Software Developer</div>
           <div className="flex items-center justify-center mt-5">
             {SkillIcons.map((val: skillIconProps, id: number) => {
               return (
@@ -97,7 +134,7 @@ export const Bio = () => {
                   <div>
                     {val.icon({
                       className:
-                        "border-2 text-icon border-indigo-500 rounded-full   p-4 text-icon",
+                        "border-2 text-icon hover:text-accent-foreground hover:bg-icon border-accent-foreground rounded-full   p-4 text-icon",
                       size: 55,
                     })}
                   </div>
@@ -108,7 +145,9 @@ export const Bio = () => {
           <div className="grid grid-cols-2 mt-10 w-full  gap-10">
             <div
               className="flex items-center justify-center cursor-pointer p-4"
-              onClick={() => {}}
+              // onClick={() => {
+              //   handleDownload;
+              // }}
             >
               <span className=" mr-6 text-[20px] text-title">Download CV</span>
               <Download className="text-icon" size={20} />

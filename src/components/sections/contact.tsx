@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -14,20 +14,27 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { TitleHeading } from "../titleHeading";
 
 export const Contact = () => {
+  const { toast } = useToast();
   const formSchema = z.object({
-    fullname: z.string({ required_error: "Full name is required" }),
-    email: z.string().email({ message: "Email is required" }),
-    message: z.string(),
+    fullname: z.string({ required_error: "full name is required" }),
+    email: z.string({ required_error: "email is required" }).email({
+      message: "must be a valid email",
+    }),
+    message: z.string({
+      required_error: "message is required",
+      description: "what would you like to say",
+    }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    mode: "onBlur",
   });
 
   const onSubmit = async (value: z.infer<typeof formSchema>) => {
@@ -46,7 +53,12 @@ export const Contact = () => {
         },
       });
       if (data.ok) {
-        console.log("success");
+        const defaultValues = {
+          email: "",
+          fullname: "",
+          message: "",
+        };
+        form.reset(defaultValues);
         toast({
           title: "Success",
           description: "Thanks You for reaching out",
@@ -65,18 +77,18 @@ export const Contact = () => {
         {" "}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-            <div className="flex items-center w-full mb-16">
+            <div className="flex items-center w-full mb-16 h-full">
               <FormField
                 control={form.control}
                 name="fullname"
                 render={({ field }) => (
-                  <FormItem className="w-full mr-16  ">
+                  <FormItem className="w-full mr-16 ">
                     <FormLabel className="text-lg">Full Name</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your Full Name"
                         {...field}
-                        className="h-[60px]  text-lg"
+                        className="h-[60px]  text-lg bg-popover  mt-4"
                       />
                     </FormControl>
 
@@ -94,7 +106,7 @@ export const Contact = () => {
                       <Input
                         placeholder="Your E Mail"
                         {...field}
-                        className="h-[60px] text-lg"
+                        className="h-[60px] text-lg bg-popover"
                       />
                     </FormControl>
                     <FormMessage />
@@ -111,7 +123,7 @@ export const Contact = () => {
                   <FormControl>
                     <Textarea
                       placeholder="Your Message"
-                      className="h-[120px] text-lg "
+                      className="h-[120px] text-lg bg-popover "
                       {...field}
                     />
                   </FormControl>
@@ -119,7 +131,10 @@ export const Contact = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="mt-14 mb-5  text-base py-6 px-7">
+            <Button
+              type="submit"
+              className="mt-14 mb-5 bg-icon hover:bg-popover hover:text-title text-base py-6 px-7"
+            >
               Send Message
             </Button>
           </form>
