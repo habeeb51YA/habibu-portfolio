@@ -802,29 +802,17 @@ video {
 .mt-4 {
   margin-top: 1rem !important;
 }
-.mt-40 {
-  margin-top: 10rem !important;
-}
-.mt-48 {
-  margin-top: 12rem !important;
-}
 .mt-5 {
   margin-top: 1.25rem !important;
 }
 .mt-6 {
   margin-top: 1.5rem !important;
 }
-.mt-60 {
-  margin-top: 15rem !important;
-}
 .mt-8 {
   margin-top: 2rem !important;
 }
 .mt-\[-70px\] {
   margin-top: -70px !important;
-}
-.mt-\[310px\] {
-  margin-top: 310px !important;
 }
 .line-clamp-2 {
   overflow: hidden !important;
@@ -909,6 +897,9 @@ video {
 }
 .h-\[60px\] {
   height: 60px !important;
+}
+.h-\[790px\] {
+  height: 790px !important;
 }
 .h-\[800px\] {
   height: 800px !important;
@@ -1030,6 +1021,24 @@ video {
   -webkit-user-select: none !important;
      -moz-user-select: none !important;
           user-select: none !important;
+}
+.snap-y {
+  scroll-snap-type: y var(--tw-scroll-snap-strictness) !important;
+}
+.snap-mandatory {
+  --tw-scroll-snap-strictness: mandatory !important;
+}
+.snap-start {
+  scroll-snap-align: start !important;
+}
+.snap-center {
+  scroll-snap-align: center !important;
+}
+.snap-always {
+  scroll-snap-stop: always !important;
+}
+.scroll-mt-\[50px\] {
+  scroll-margin-top: 50px !important;
 }
 .list-none {
   list-style-type: none !important;
@@ -1320,6 +1329,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem !important;
+}
+.pt-\[150px\] {
+  padding-top: 150px !important;
 }
 .text-center {
   text-align: center !important;
@@ -1613,6 +1625,18 @@ video {
   
   }
 } */
+/* For Webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Thumb color */
+}
 
 .file\:border-0::file-selector-button {
   border-width: 0px !important;

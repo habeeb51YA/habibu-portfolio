@@ -2,10 +2,6 @@ import React from "react";
 import { TitleHeading } from "../titleHeading";
 
 const HomePage = () => {
-  console.log(
-    "process.env.NEXT_PUBLIC_FIREBASE_APIKEY",
-    process.env.NEXT_PUBLIC_FIREBASE_APIKEY
-  );
   return (
     <div>
       {/* <TitleHeading title="About Me" /> */}

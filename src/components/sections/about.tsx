@@ -26,10 +26,10 @@ leading-9"
         significance of cross-functional collaboration, stringent quality
         assurance practices, and thorough Q/A testing, all aimed at ensuring the
         delivery of exceptional end products. <br /> <br />
-        Supported by a robust educational foundation and a varied portfolio of
+        {/* Supported by a robust educational foundation and a varied portfolio of
         successful projects, I stand as a valuable asset, ready to leave a
         meaningful imprint and continually push the boundaries in the dynamic
-        world of software development.
+        world of software development. */}
       </div>
     </div>
   );

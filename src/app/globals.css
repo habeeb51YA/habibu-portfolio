@@ -108,6 +108,18 @@
     --title: 40, 7%, 92%;
   }
 }
+/* For Webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Thumb color */
+}
 
 @layer base {
   * {
