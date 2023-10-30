@@ -130,7 +130,7 @@ export const Bio = () => {
           <div className="flex items-center justify-center mt-5">
             {SkillIcons.map((val: skillIconProps, id: number) => {
               return (
-                <div key={id} className="mr-4">
+                <div key={id} className="mr-4 cursor-pointer">
                   <div>
                     {val.icon({
                       className:

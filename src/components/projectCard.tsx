@@ -1,7 +1,8 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "@/services/firebase/config";
 interface IProjectCard {
   title?: string;
   image?: string | ReactNode;
@@ -9,7 +10,31 @@ interface IProjectCard {
 }
 
 export const ProjectCard: React.FC<IProjectCard> = () => {
-  const projects = [
+  useEffect(() => {
+    getProjects();
+  }, []);
+
+  async function getProjects() {
+    let projects: any = [];
+
+    const projectRef = query(
+      collection(db, "projects")
+      // orderBy("timestamp", "desc")
+    );
+    const querySnapshot = await getDocs(projectRef);
+    querySnapshot.forEach((doc) => {
+      if (doc.exists()) {
+        projects.push({
+          ...doc?.data(),
+          id: doc?.id,
+        });
+      }
+    });
+
+    // console.log("projects", projects);
+    return projects;
+  }
+  const projectss = [
     {
       title: "First Active",
       href: `${process.env.FIRST_ACTIVE_URL}`,
@@ -43,7 +68,7 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
   return (
     <div>
       <div className="grid grid-cols-2 gap-10  ">
-        {projects.map((project: IProjectCard, id: number) => {
+        {projectss?.map((project: IProjectCard, id: number) => {
           return (
             <div
               key={id}
