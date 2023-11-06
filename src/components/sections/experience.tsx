@@ -11,7 +11,7 @@ const Experience: React.FC = () => {
     },
     {
       company: "Pramie Technologies",
-      role: "Frontend Developer",
+      role: "Software Developer",
       date: "January 2022 - Present",
     },
     {

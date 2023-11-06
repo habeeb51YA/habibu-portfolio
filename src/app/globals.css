@@ -99,11 +99,11 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0, 0%, 46%;
     --border: 217.2 32.6% 17.5%;
-    --input: 240, 8%, 16%;
+    --input: 0, 0%, 14%;
     --ring: 40, 7%, 92%;
     --basic: 126, 10%, 61%;
-    --basic-foreground: 34, 6%, 24%;
-    --icon: 33, 69%, 52%;
+    --basic-foreground: 15, 98%, 49%;
+    --icon: 357, 96%, 60%;
     --sub: 239, 84%, 67%;
     --title: 40, 7%, 92%;
   }
