@@ -12,7 +12,7 @@ const HomePage = () => {
         <div className="mt-16 text-title  text-[22px] italic leading-9 font-normal">
           A Software developer from Nigeria. I have rich experience in react,
           also I am good at typescript. I love to talk with you about our
-          unique.
+          unique. I am willing to work and dedicated to learning.
         </div>
         <div
           className="mx-auto flex justify-center items-center cursor-pointer px-7 py-5 text-title hover:text-icon hover:bg-transparent bg-icon rounded-full w-[200px] text-[20px] mt-20 border border-2 hover:border-accent-foreground"
