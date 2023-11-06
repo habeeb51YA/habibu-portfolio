@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Linkedin, Twitter, Send, Github, Download, Mail } from "lucide-react";
 import { handleScrollToSection } from "../sidenav";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { getDownloadURL, ref } from "firebase/storage";
 import { projectStorage } from "@/services/firebase/config";
@@ -21,6 +22,8 @@ type skillIconProps = {
 };
 
 export const Bio = () => {
+  const router = useRouter();
+
   const handleRedirect = (link: string) => {
     return window.open(link, "_blank");
   };
@@ -83,19 +86,10 @@ export const Bio = () => {
     },
   ];
 
-  // const BackgroundReference = ref(
-  //   projectStorage,
-  //   "gs://habibu-portfolio.appspot.com/background1.jpg"
-  // );
-  // const getDownloadUrl = getDownloadURL(BackgroundReference).then((url) => {
-  //   const image = document.getElementById("myImg");
-  //   image?.setAttribute("src", url);
-  // });
-
   return (
     <div className="flex relative">
       {" "}
-      <div className=" bg-card opacity-20 h-[850px] w-[690px] rounded-md"></div>
+      <div className=" bg-icon opacity-20 h-[850px] w-[690px] rounded-md"></div>
       <div className="bg-input h-[855px] w-[690px] absolute top-[20px] left-[25px] rounded-md shadow-black shadow-md ">
         <div className="h-[460px] relative overflow-hidden">
           <Image
@@ -111,7 +105,7 @@ export const Bio = () => {
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0,25 Q50,0 100,25 Z" fill="#26262d" />
+            <path d="M0,25 Q50,0 100,25 Z" fill="#242424" />
           </svg>
         </div>
         <div className="flex items-center justify-center mt-[-70px]">
@@ -134,7 +128,7 @@ export const Bio = () => {
                   <div>
                     {val.icon({
                       className:
-                        "border-2 text-icon hover:text-accent-foreground hover:bg-icon border-accent-foreground rounded-full   p-4 text-icon",
+                        "border-2 text-icon hover:text-accent-foreground hover:bg-icon border-accent-foreground rounded-full p-4",
                       size: 55,
                     })}
                   </div>
@@ -154,7 +148,8 @@ export const Bio = () => {
             </div>
             <div
               className="flex items-center justify-center cursor-pointer p-4"
-              onClick={() => handleScrollToSection("contact-section")}
+              // onClick={() => handleScrollToSection("contact-section")}
+              onClick={() => router.push("/contact")}
             >
               <span className="text-[20px] mr-6 text-title"> Contact Me</span>{" "}
               <Send className="text-icon" size={20} />

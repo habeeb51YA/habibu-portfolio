@@ -56,7 +56,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu className="w-full h-8 mt-5 mb-5 flex justify-between px-5">
+    <NavigationMenu className="w-full h-8 mt-5 mb-5 flex px-5">
       <NavigationMenuList className="">
         <NavigationMenuItem>
           <Link href="/home" legacyBehavior passHref>
@@ -67,8 +67,8 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
       </NavigationMenuList>
 
-      <NavigationMenuList className=" ">
-        {/* <NavigationMenuItem>
+      {/* <NavigationMenuList className=" "> */}
+      {/* <NavigationMenuItem>
           <Link href="/home" legacyBehavior passHref>
             <NavigationMenuLink className={`${navigationMenuTriggerStyle()} `}>
               Home
@@ -103,7 +103,7 @@ export function NavigationMenuDemo() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem> */}
-        {/* <NavigationMenuItem>
+      {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -136,7 +136,7 @@ export function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem> */}
-        {/* <NavigationMenuItem>
+      {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -152,15 +152,14 @@ export function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem> */}
-        {/* <NavigationMenuItem>
+      {/* <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem> */}
-      </NavigationMenuList>
-      <ModeToggle />
+      {/* </NavigationMenuList> */}
     </NavigationMenu>
   );
 }

@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { TitleHeading } from "../titleHeading";
 
-export const Contact = () => {
+const Contact = () => {
   const { toast } = useToast();
   const formSchema = z.object({
     fullname: z.string({ required_error: "full name is required" }),
@@ -143,3 +143,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;

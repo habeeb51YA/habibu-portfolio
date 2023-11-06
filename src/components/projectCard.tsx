@@ -1,26 +1,27 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "@/services/firebase/config";
+import { ChevronsUp } from "lucide-react";
+import { handleScrollToSection } from "./sidenav";
 interface IProjectCard {
-  title?: string;
-  image?: string | ReactNode;
-  href?: string;
+  name?: string;
+  imgUrl?: string;
+  projectUrl?: string;
+  description?: string;
 }
 
 export const ProjectCard: React.FC<IProjectCard> = () => {
+  const [projects, setProjects] = useState([]);
   useEffect(() => {
     getProjects();
-  }, []);
+  }, [projects]);
 
   async function getProjects() {
     let projects: any = [];
 
-    const projectRef = query(
-      collection(db, "projects")
-      // orderBy("timestamp", "desc")
-    );
+    const projectRef = query(collection(db, "projects"));
     const querySnapshot = await getDocs(projectRef);
     querySnapshot.forEach((doc) => {
       if (doc.exists()) {
@@ -31,51 +32,20 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
       }
     });
 
-    // console.log("projects", projects);
+    setProjects(projects);
     return projects;
   }
-  const projectss = [
-    {
-      title: "First Active",
-      href: `${process.env.FIRST_ACTIVE_URL}`,
-      image: (
-        <Image
-          //   className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
-          src="/first-active.jpg"
-          alt="First Active 365"
-          width={320}
-          height={260}
-          className="border rounded-lg"
-        />
-      ),
-    },
-
-    {
-      title: "Bloco",
-      href: `${process.env.BLOCO_URL}`,
-      image: (
-        <Image
-          //   className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
-          src="/bloco.jpg"
-          alt="Bloco"
-          width={320}
-          height={260}
-          className="border rounded-lg"
-        />
-      ),
-    },
-  ];
   return (
-    <div>
+    <div className="flex justify-between flex-col min-h-[600px]">
       <div className="grid grid-cols-2 gap-10  ">
-        {projectss?.map((project: IProjectCard, id: number) => {
+        {projects?.map((project: IProjectCard, id: number) => {
           return (
             <div
               key={id}
               className="flex items-center justify-center border border-1 border-icon rounded-xl "
             >
               <Link
-                href={project.href as string}
+                href={project?.projectUrl as string}
                 legacyBehavior
                 className="flex items-center justify-center"
               >
@@ -86,10 +56,19 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
                 >
                   <div className="py-8 flex flex-col items-center justify-center ">
                     {" "}
-                    <div className="mb-4">{project.image}</div>
+                    <div className="mb-4">
+                      <Image
+                        //   className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
+                        src={project?.imgUrl as string}
+                        alt={project?.description as string}
+                        width={320}
+                        height={260}
+                        className="border rounded-lg"
+                      />
+                    </div>
                     <div className="text-[18px] text-title">
                       {" "}
-                      {project.title}
+                      {project?.name}
                     </div>
                   </div>
                 </a>
@@ -97,6 +76,14 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
             </div>
           );
         })}
+      </div>
+      <div
+        className="ml-auto"
+        onClick={() => {
+          handleScrollToSection("dashboard-section");
+        }}
+      >
+        <ChevronsUp className="text-icon" size={60} />
       </div>
     </div>
   );

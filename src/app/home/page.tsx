@@ -7,19 +7,19 @@ import Skills from "@/components/sections/skills";
 import Work from "@/components/sections/experience";
 import { Sidenav } from "@/components/sidenav";
 import { About } from "@/components/sections/about";
-import { Contact } from "@/components/sections/contact";
 import { motion } from "framer-motion";
 import { Bio } from "@/components/sections/bio";
 import { Projects } from "@/components/sections/projects";
 import Experience from "@/components/sections/experience";
 import HomePage from "@/components/sections/homePage";
+import Contact from "@/components/sections/contact";
 
 const Home = () => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.7 }}
     >
       <div className="flex justify-center">
         <div className="fixed ml-[130px]">
@@ -59,12 +59,12 @@ const Home = () => {
                   <Projects />
                 </section>
               </div>
-              <div id="contact-section">
+              {/* <div id="contact-section">
                 {" "}
                 <section className="scroll-mt-[50px] snap-center snap-always h-[790px]">
                   <Contact />
                 </section>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
