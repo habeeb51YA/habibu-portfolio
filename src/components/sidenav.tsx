@@ -1,9 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
-import { School, FileBadge2, User, Trophy, Send } from "lucide-react";
+import React, { ReactNode, useState } from "react";
+import { School, Home, FileBadge2, User, Trophy, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { ModeToggle } from "./dropdown";
+
+type IconProps = {
+  className: string;
+  size?: number;
+};
+
+type navIconProps = {
+  name: string;
+  section?: string;
+  icon: ({ className }: IconProps) => ReactNode | any;
+};
 
 export const handleScrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -14,69 +25,85 @@ export const handleScrollToSection = (sectionId: string) => {
 
 export const Sidenav: React.FC = () => {
   const [selectedLink, setSelectedLink] = useState("dashboard-section");
+
   const navigation = [
-    {
-      icon: <ModeToggle />,
-    },
+    // {
+    //   icon: <ModeToggle />,
+    // },
     {
       name: "Home",
-      icon: <User className="text-icon" size={30} />,
-      // href: "/about",
+      icon: ({ className, size }: IconProps) => (
+        <Home className={className} size={size} />
+      ),
       section: "dashboard-section",
     },
     {
       name: "About",
-      icon: <User className="text-icon" size={30} />,
-      // href: "/about",
+      icon: ({ className, size }: IconProps) => (
+        <User className={className} size={size} />
+      ),
       section: "about-section",
     },
     {
       name: "Skills",
-      icon: <FileBadge2 className="text-icon" size={30} />,
-      // href: "/skills",
+      icon: ({ className, size }: IconProps) => (
+        <FileBadge2 className={className} size={size} />
+      ),
       section: "skills-section",
     },
     {
       name: "Experience",
-      icon: <School className="text-icon" size={30} />,
-      // href: "/expirence",
+      icon: ({ className, size }: IconProps) => (
+        <School className={className} size={size} />
+      ),
       section: "experience-section",
     },
 
     {
       name: "Projects",
-      icon: <Trophy className="text-icon" size={30} />,
-      // href: "/resume",
+      icon: ({ className, size }: IconProps) => (
+        <Trophy className={className} size={size} />
+      ),
       section: "project-section",
     },
-    // {
-    //   name: "Contact",
-    //   icon: <Send className="text-icon" size={30} />,
-    //   // href: "/contacts",
-    //   section: "contact-section",
-    // },
+    {
+      name: "Contact",
+      icon: ({ className, size }: IconProps) => (
+        <Send className={className} size={size} />
+      ),
+      section: "contact-section",
+    },
   ];
 
   return (
     <div>
-      {navigation.map((nav, id) => {
+      {navigation.map((nav: navIconProps, id) => {
         return (
           <div key={id}>
-            <div>
+            <div className="hoverButton">
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                // animate={{ opacity: 1 }}
-                // transition={{ duration: 0.5 }}
                 onClick={() => {
                   handleScrollToSection(nav.section as string);
                   setSelectedLink(nav.section as string);
                 }}
-                className={`rounded-md ml-[20px] mb-4 shadow-sm shadow-primary flex flex-col h-[80px] w-[80px] items-center justify-center p-x-4 p-y-6  ${
-                  selectedLink === nav.section ? "bg-popover" : "bg-input"
-                }`}
+                className={`rounded-md ml-[20px] mb-4 shadow-sm shadow-accent-foreground flex flex-col h-[85px] w-[85px] items-center justify-center p-x-4 p-y-6 bg-input`}
               >
-                <div className="mb-4">{nav.icon}</div>
-                <div className="text-sm text-title">{nav.name}</div>
+                <div className="mb-3">
+                  {nav.icon({
+                    className: `${
+                      selectedLink === nav.section ? "text-icon" : "text-title"
+                    }`,
+                    size: 25,
+                  })}
+                </div>
+                <div
+                  className={`text-[13px] ${
+                    selectedLink === nav.section ? "text-icon" : "text-title"
+                  }`}
+                >
+                  {nav.name}
+                </div>
               </motion.button>
             </div>
           </div>

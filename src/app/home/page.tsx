@@ -1,10 +1,9 @@
 "use client";
 
-import React, { ReactNode, useEffect } from "react";
+import React from "react";
 import { ModeToggle } from "../../components/dropdown";
 import { NavigationMenuDemo } from "@/components/navmenu";
 import Skills from "@/components/sections/skills";
-import Work from "@/components/sections/experience";
 import { Sidenav } from "@/components/sidenav";
 import { About } from "@/components/sections/about";
 import { motion } from "framer-motion";
@@ -15,10 +14,37 @@ import HomePage from "@/components/sections/homePage";
 import Contact from "@/components/sections/contact";
 
 const Home = () => {
+  const sections = [
+    {
+      id: "dashboard-section",
+      section: <HomePage />,
+    },
+    {
+      id: "about-section",
+      section: <About />,
+    },
+    {
+      id: "skills-section",
+      section: <Skills />,
+    },
+    {
+      id: "experience-section",
+      section: <Experience />,
+    },
+    {
+      id: "project-section",
+      section: <Projects />,
+    },
+    {
+      id: "contact-section",
+      section: <Contact />,
+    },
+  ];
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.7 }}
     >
       <div className="flex justify-center">
@@ -29,42 +55,17 @@ const Home = () => {
             </div>
             <Bio />
             <div className="snap-y snap-mandatory shadow-lg shadow-inner ml-6 pl-16 bg-input border-1 border-secondary h-[800px] w-[1000px] mt-10  pt-8 rounded-md pr-12 overflow-auto pt-10">
-              <div id="dashboard-section">
-                <section className="snap-center snap-always h-[790px] ">
-                  <div className="pt-[150px]">
-                    <HomePage />
+              {sections.map((val, index) => {
+                return (
+                  <div key={index}>
+                    <div id={`${val.id}`}>
+                      <section className=" scroll-mt-[50px] snap-center snap-always h-[790px]">
+                        {val.section}
+                      </section>
+                    </div>
                   </div>
-                </section>
-              </div>
-              <div id="about-section">
-                {" "}
-                <section className=" scroll-mt-[50px] snap-center snap-always h-[790px]">
-                  <About />
-                </section>
-              </div>
-              <div id="skills-section">
-                {" "}
-                <section className=" scroll-mt-[50px] snap-center snap-always h-[790px] ">
-                  <Skills />
-                </section>
-              </div>
-              <div id="experience-section">
-                {" "}
-                <section className=" scroll-mt-[50px] snap-center snap-always h-[790px] ">
-                  <Experience />
-                </section>
-              </div>
-              <div id="project-section">
-                <section className="scroll-mt-[50px] snap-center snap-always h-[790px]">
-                  <Projects />
-                </section>
-              </div>
-              {/* <div id="contact-section">
-                {" "}
-                <section className="scroll-mt-[50px] snap-center snap-always h-[790px]">
-                  <Contact />
-                </section>
-              </div> */}
+                );
+              })}
             </div>
           </div>
         </div>

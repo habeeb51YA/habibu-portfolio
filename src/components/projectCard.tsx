@@ -77,14 +77,6 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
           );
         })}
       </div>
-      <div
-        className="ml-auto"
-        onClick={() => {
-          handleScrollToSection("dashboard-section");
-        }}
-      >
-        <ChevronsUp className="text-icon" size={60} />
-      </div>
     </div>
   );
 };

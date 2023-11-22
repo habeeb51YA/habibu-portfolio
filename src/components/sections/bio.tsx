@@ -38,8 +38,7 @@ export const Bio = () => {
           color={color}
           size={size}
           onClick={() => {
-            // handleRedirect(`${process.env.NEXT_PUBLIC_LINKEDIN_URL}`)
-            window.open(process.env.NEXT_PUBLIC_LINKEDIN_URL, "_blank");
+            handleRedirect(`${process.env.NEXT_PUBLIC_LINKEDIN_URL}`);
           }}
         />
       ),
@@ -89,7 +88,7 @@ export const Bio = () => {
   return (
     <div className="flex relative">
       {" "}
-      <div className=" bg-icon opacity-20 h-[850px] w-[690px] rounded-md"></div>
+      <div className=" bg-icon opacity-10 h-[850px] w-[690px] rounded-md"></div>
       <div className="bg-input h-[855px] w-[690px] absolute top-[20px] left-[25px] rounded-md shadow-black shadow-md ">
         <div className="h-[460px] relative overflow-hidden">
           <Image
@@ -99,6 +98,7 @@ export const Bio = () => {
             width={690}
             height={100}
             id="myImg"
+            // style={{ width: "auto", height: "auto" }}
           />
           <svg
             className="absolute top-[287px] left-0 w-100"
@@ -124,7 +124,7 @@ export const Bio = () => {
           <div className="flex items-center justify-center mt-5">
             {SkillIcons.map((val: skillIconProps, id: number) => {
               return (
-                <div key={id} className="mr-4 cursor-pointer">
+                <div key={id} className="hoverButton mr-4 cursor-pointer">
                   <div>
                     {val.icon({
                       className:
@@ -138,18 +138,19 @@ export const Bio = () => {
           </div>
           <div className="grid grid-cols-2 mt-10 w-full  gap-10">
             <div
-              className="flex items-center justify-center cursor-pointer p-4"
-              // onClick={() => {
-              //   handleDownload;
-              // }}
+              className=" hoverButton flex items-center justify-center cursor-pointer p-4"
+              onClick={() => {
+                handleRedirect(
+                  "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/resume%2FHabibu%20Yusuf%20Abdulhamid%20resume..pdf?alt=media&token=149d8bf0-27a9-46e4-b477-1592fb4b686a"
+                );
+              }}
             >
-              <span className=" mr-6 text-[20px] text-title">Download CV</span>
+              <span className=" mr-6 text-[20px] text-title">View CV</span>
               <Download className="text-icon" size={20} />
             </div>
             <div
-              className="flex items-center justify-center cursor-pointer p-4"
-              // onClick={() => handleScrollToSection("contact-section")}
-              onClick={() => router.push("/contact")}
+              className=" hoverButton flex items-center justify-center cursor-pointer p-4"
+              onClick={() => handleScrollToSection("contact-section")}
             >
               <span className="text-[20px] mr-6 text-title"> Contact Me</span>{" "}
               <Send className="text-icon" size={20} />
