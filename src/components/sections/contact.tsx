@@ -18,6 +18,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 import { TitleHeading } from "../titleHeading";
+import { ChevronsUp } from "lucide-react";
+import { handleScrollToSection } from "../sidenav";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -73,6 +75,11 @@ const Contact = () => {
     <div>
       {" "}
       <TitleHeading title="Contact" />
+      <div className="mb-14 text-icon italic text-[21px]">
+        Thank you for reaching out, I would love to hear from you! weather you
+        have a question,
+        <br /> a comment, or just to chat.
+      </div>
       <div className="">
         {" "}
         <Form {...form}>
@@ -139,6 +146,14 @@ const Contact = () => {
             </Button>
           </form>
         </Form>
+      </div>
+      <div
+        className="flex justify-end "
+        onClick={() => {
+          handleScrollToSection("dashboard-section");
+        }}
+      >
+        <ChevronsUp className="text-icon" size={60} />
       </div>
     </div>
   );

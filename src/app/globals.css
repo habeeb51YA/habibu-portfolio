@@ -102,23 +102,11 @@
     --input: 0, 0%, 14%;
     --ring: 40, 7%, 92%;
     --basic: 126, 10%, 61%;
-    --basic-foreground: 15, 98%, 49%;
-    --icon: 357, 96%, 60%;
+    --basic-foreground: 240, 29%, 9%;
+    --icon: 36, 88%, 59%;
     --sub: 239, 84%, 67%;
     --title: 40, 7%, 92%;
   }
-}
-/* For Webkit-based browsers (e.g., Chrome, Safari) */
-::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
-}
-
-::-webkit-scrollbar-track {
-  background: transparent; /* Track color */
-}
-
-::-webkit-scrollbar-thumb {
-  background: transparent; /* Thumb color */
 }
 
 @layer base {
@@ -130,4 +118,38 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: "Roboto", system-ui, sans-serif;
   }
+  .cursor {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fb3741;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+
+  .follower-cursor {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fb3741;
+    border-radius: 50%;
+    position: absolute;
+    background-color: transparent;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+}
+/* For Webkit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 4px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+::-webkit-scrollbar-thumb {
+  background: #ffa200; /* Thumb color */
+  opacity: 1;
 }
