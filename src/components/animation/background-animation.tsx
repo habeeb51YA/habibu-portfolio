@@ -8,7 +8,7 @@ const BackgroundAnimatation = (
   children: React.ReactNode
 ) => (
   <svg
-    className=" w-screen min-h-screen "
+    className=" w-screen min-h-screen"
     viewBox="0 0 1251 776"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
