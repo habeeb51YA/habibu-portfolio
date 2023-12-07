@@ -88,39 +88,39 @@ export const Bio = () => {
   return (
     <div className="flex relative">
       {" "}
-      <div className=" bg-icon opacity-10 h-[850px] w-[690px] rounded-md"></div>
-      <div className="bg-input h-[855px] w-[690px] absolute top-[20px] left-[25px] rounded-md shadow-black shadow-md ">
-        <div className="h-[460px] relative overflow-hidden">
+      <div className=" bg-icon opacity-10 h-[670px] w-[490px] rounded-md"></div>
+      <div className="bg-input h-[675px] w-[490px] absolute top-[16px] left-[20px] rounded-md shadow-black shadow-md ">
+        <div className="h-[350px] relative overflow-hidden">
           <Image
             className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
             src="/background1.jpg"
             alt="background_picture"
             width={690}
-            height={100}
+            height={60}
             id="myImg"
-            // style={{ width: "auto", height: "auto" }}
+            style={{ width: "100%", height: "330px" }}
           />
           <svg
-            className="absolute top-[287px] left-0 w-100"
+            className="absolute top-[213px] left-0 w-100"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M0,25 Q50,0 100,25 Z" fill="#242424" />
+            <path d="M0,25 Q50,0 100,25 Z" fill="#212121" />
           </svg>
         </div>
-        <div className="flex items-center justify-center mt-[-70px]">
-          <Avatar className="w-[150px] h-[150px]">
+        <div className="flex items-center justify-center mt-[-120px]">
+          <Avatar className="w-[130px] h-[130px]">
             <AvatarImage
               src="https://github.com/shadcn.png"
               alt="profile_photo"
             />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>Profile Picture</AvatarFallback>
           </Avatar>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-center">
-          <div className=" text-title text-[28px]">Habibu Yusuf Abdulhamid</div>
-          <div className="text-icon text-[18px]">Software Developer</div>
+          <div className=" text-title text-[23px]">Habibu Yusuf Abdulhamid</div>
+          <div className="text-icon text-[15px]">Software Developer</div>
           <div className="flex items-center justify-center mt-5">
             {SkillIcons.map((val: skillIconProps, id: number) => {
               return (
@@ -128,8 +128,8 @@ export const Bio = () => {
                   <div>
                     {val.icon({
                       className:
-                        "border-2 text-icon hover:text-accent-foreground hover:bg-icon border-accent-foreground rounded-full p-4",
-                      size: 55,
+                        "border-2 text-icon hover:text-accent-foreground hover:bg-icon border-accent-foreground rounded-full p-[10px]",
+                      size: 40,
                     })}
                   </div>
                 </div>
@@ -145,15 +145,15 @@ export const Bio = () => {
                 );
               }}
             >
-              <span className=" mr-6 text-[20px] text-title">View CV</span>
-              <Download className="text-icon" size={20} />
+              <span className=" mr-6 text-[16px] text-title">View CV</span>
+              <Download className="text-icon" size={18} />
             </div>
             <div
               className=" hoverButton flex items-center justify-center cursor-pointer p-4"
               onClick={() => handleScrollToSection("contact-section")}
             >
-              <span className="text-[20px] mr-6 text-title"> Contact Me</span>{" "}
-              <Send className="text-icon" size={20} />
+              <span className="text-[16px] mr-6 text-title"> Contact Me</span>{" "}
+              <Send className="text-icon" size={18} />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ModeToggle } from "../../components/dropdown";
 import { NavigationMenuDemo } from "@/components/navmenu";
 import Skills from "@/components/sections/skills";
@@ -10,10 +10,12 @@ import { motion } from "framer-motion";
 import { Bio } from "@/components/sections/bio";
 import { Projects } from "@/components/sections/projects";
 import Experience from "@/components/sections/experience";
-import HomePage from "@/components/sections/homePage";
+import HomePage from "@/components/sections/dashboard";
 import Contact from "@/components/sections/contact";
 
 const Home = () => {
+  const [activeSection, setActiveSection] = useState("");
+
   const sections = [
     {
       id: "dashboard-section",

@@ -38,10 +38,12 @@ const Experience: React.FC = () => {
               <div className="mr-12 border-l-2  border-destructive-foreground mb-16"></div>
               <div>
                 {" "}
-                <div className="mt-1 text-[30px] text-icon">{val?.title}</div>
-                <div className="mt-1 text-[23px]">{val.role}</div>
-                <div className="mt-1 text-[19px]">{val.date}</div>
-                <div className="mt-2  mb-10 text-[17px]">{val.company}</div>
+                <div className="mt-1 text-[20px] text-icon">{val?.title}</div>
+                <div className="mt-1 text-[17px]">{val.role}</div>
+                <div className="mt-1 text-[15px] text-ring">{val.date}</div>
+                <div className="mt-2  mb-10 text-[14px] text-ring">
+                  {val.company}
+                </div>
               </div>
             </div>
           </div>

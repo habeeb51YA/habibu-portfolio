@@ -36,13 +36,13 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
     return projects;
   }
   return (
-    <div className="flex justify-between flex-col min-h-[600px]">
-      <div className="grid grid-cols-2 gap-10  ">
+    <div className="flex justify-between flex-col min-h-[500px]">
+      <div className="grid grid-cols-2 gap-8  ">
         {projects?.map((project: IProjectCard, id: number) => {
           return (
             <div
               key={id}
-              className="flex items-center justify-center border border-1 border-icon rounded-xl "
+              className="flex items-center justify-center border border-1 border-icon rounded-xl w-full"
             >
               <Link
                 href={project?.projectUrl as string}
@@ -54,19 +54,20 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
                   rel="noopener noreferrer"
                   className=" flex items-center justify-center "
                 >
-                  <div className="py-8 flex flex-col items-center justify-center ">
+                  <div className="flex flex-col items-center justify-center w-full ">
                     {" "}
-                    <div className="mb-4">
+                    <div className="mb-3">
                       <Image
                         //   className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
                         src={project?.imgUrl as string}
                         alt={project?.description as string}
-                        width={320}
-                        height={260}
+                        width={150}
+                        height={150}
                         className="border rounded-lg"
+                        style={{ width: "150px", height: "150px" }}
                       />
                     </div>
-                    <div className="text-[18px] text-title">
+                    <div className="text-[14px] text-title">
                       {" "}
                       {project?.name}
                     </div>

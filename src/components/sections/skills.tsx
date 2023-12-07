@@ -66,7 +66,7 @@ const skills = () => {
   return (
     <div className="">
       <TitleHeading title="Skills" />
-      <div className="w-100 grid place-items-center grid-cols-4 gap-x-4 gap-y-12 ">
+      <div className="w-full grid place-items-center grid-cols-4 gap-x-4 gap-y-12 ">
         {SkillIcons.map((val: skillIconProps, id: number) => {
           // const Icon = () => {
           //   val.icon({ className: "border-1", color: "red" });
@@ -77,11 +77,11 @@ const skills = () => {
               <div>
                 {val.icon({
                   className:
-                    "border-2 hover:border-icon border-destructive-foreground rounded-full  text-[150px] p-8 text-icon ",
-                  size: 150,
+                    "border-2 hover:border-icon border-destructive-foreground rounded-full  text-[100px] p-6 text-icon ",
+                  size: 100,
                 })}
               </div>
-              <div className="mt-4 text-title text-[18px]">{val.title}</div>
+              <div className="mt-4 text-ring text-[14px]">{val.title}</div>
             </div>
           );
         })}

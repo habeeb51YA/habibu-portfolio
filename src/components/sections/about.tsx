@@ -5,11 +5,7 @@ export const About = () => {
   return (
     <div>
       <TitleHeading title="About Me" />
-      <div
-        className="text-title text-[20px] Class
-Properties
-leading-9"
-      >
+      <div className="text-ring text-[15px] ClassProperties leading-7">
         Greetings! I'm Habibu Yusuf Abdulhamid, an enthusiastic and dedicated
         software developer hailing from Nigeria, currently residing in the
         vibrant city of Abuja. My expertise involves a rich tapestry of
@@ -21,10 +17,11 @@ leading-9"
         <br /> <br /> Throughout my professional journey, I've been fortunate to
         sharpen my skills through invaluable experiences and the guidance of a
         wide-reaching network of fellow developers. This journey has equipped me
-        with a diverse skill set and a keen aptitude for problem-solving. I
+        with a diverse skill set and a keen aptitude for problem-solving.
+        {/* I
         particularly highlight the significance of cross-functional
         collaboration, stringent quality assurance practices, and thorough Q/A
-        testing, all aimed at ensuring the delivery of exceptional end products.{" "}
+        testing, all aimed at ensuring the delivery of exceptional end products.{" "} */}
         <br /> <br />
         When i'm not programming, I find pleasure in playing football, video
         games, watching football games and movies. I also like going out to

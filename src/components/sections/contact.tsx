@@ -75,27 +75,26 @@ const Contact = () => {
     <div>
       {" "}
       <TitleHeading title="Contact" />
-      <div className="mb-14 text-icon italic text-[21px]">
+      <div className="mb-12 text-ring italic text-[16px]">
         Thank you for reaching out, I would love to hear from you! weather you
-        have a question,
-        <br /> a comment, or just to chat.
+        have a question, a comment, or just to chat.
       </div>
       <div className="">
         {" "}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-            <div className="flex items-center w-full mb-16 h-full">
+            <div className="flex items-center w-full mb-10 h-full">
               <FormField
                 control={form.control}
                 name="fullname"
                 render={({ field }) => (
                   <FormItem className="w-full mr-16 ">
-                    <FormLabel className="text-lg">Full Name</FormLabel>
+                    <FormLabel className="text-sm">Full Name</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your Full Name"
                         {...field}
-                        className="h-[60px]  text-lg bg-popover  mt-4"
+                        className="h-[43px]  text-sm bg-basic"
                       />
                     </FormControl>
 
@@ -108,12 +107,12 @@ const Contact = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel className="text-lg">E Mail</FormLabel>
+                    <FormLabel className="text-sm">E Mail</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your E Mail"
                         {...field}
-                        className="h-[60px] text-lg bg-popover"
+                        className="h-[43px] text-sm bg-basic"
                       />
                     </FormControl>
                     <FormMessage />
@@ -126,11 +125,11 @@ const Contact = () => {
               name="message"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel className="text-lg">Message</FormLabel>
+                  <FormLabel className="text-sm">Message</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Your Message"
-                      className="h-[120px] text-lg bg-popover "
+                      className="h-[100px] text-sm bg-basic "
                       {...field}
                     />
                   </FormControl>
@@ -140,7 +139,7 @@ const Contact = () => {
             />
             <Button
               type="submit"
-              className="mt-14 mb-5 bg-icon hover:bg-popover hover:text-title text-base py-6 px-7"
+              className="mt-8 mb-3 bg-icon hover:bg-popover hover:text-title text-sm py-5 px-6"
             >
               Send Message
             </Button>
@@ -153,7 +152,7 @@ const Contact = () => {
           handleScrollToSection("dashboard-section");
         }}
       >
-        <ChevronsUp className="text-icon" size={60} />
+        <ChevronsUp className="text-icon" size={38} />
       </div>
     </div>
   );

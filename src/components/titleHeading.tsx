@@ -17,14 +17,14 @@ export const TitleHeading: React.FC<titleHeadingProp> = ({
     <div className={className}>
       {isIcon ? (
         <div className="flex items-center justify-between">
-          <div className="text-[31px]  font-normal  text-title"> {title}</div>
+          <div className="text-[20px]  font-normal  text-title"> {title}</div>
           <div>{icon}</div>
         </div>
       ) : (
-        <div className="text-[31px]  font-normal  text-title"> {title}</div>
+        <div className="text-[21px]  font-normal  text-title"> {title}</div>
       )}
 
-      <div className=" mt-8 border-b-[1px] border-accent-foreground mb-10"></div>
+      <div className=" mt-[30px] border-b-[1px] border-accent-foreground mb-10"></div>
     </div>
   );
 };

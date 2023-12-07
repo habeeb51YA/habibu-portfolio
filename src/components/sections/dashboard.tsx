@@ -1,26 +1,27 @@
 import React from "react";
 import Image from "next/image";
 
-const HomePage = () => {
+const Dashboard = () => {
   return (
     <div>
-      <div className="pt-[100px]">
-        <div className="text-[45px] text-title">
+      <div className="pt-[110px]">
+        <div className="text-[33px] text-title">
           Hello, I am Habibu Yusuf Abdulhamid
         </div>
-        <div className="mt-16 text-title  text-[22px] italic leading-9 font-normal">
-          A Software developer from Nigeria. I have rich experience in react,
-          also I am good at typescript. I love to talk with you about our
-          unique. I am willing to work and dedicated to learning.
+        <div className="mt-4 text-ring  text-[18px] italic leading-7 font-normal">
+          A Software developer from Nigeria. I have rich experience in building
+          user friendly and responsive web based applications.
+          {/* I am willing to
+          work and dedicated to learning. */}
         </div>
-        <div className="flex justify-end items-start mt-[60px]">
+        <div className="flex justify-end items-start mt-[65px]">
           <Image
             src="/logo.png"
             alt="logo"
-            width={250}
-            height={250}
+            width={130}
+            height={130}
             id="myLogo"
-            style={{ width: "auto", height: "auto" }}
+            style={{ width: "130px", height: "130px" }}
           />
         </div>
 
@@ -39,4 +40,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Dashboard;

@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavigationMenuDemo } from "@/components/navmenu";
 import { Toaster } from "@/components/ui/toaster";
+import BackgroundAnimatation from "@/components/animation/background-animation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,13 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} mb-20 bg-popover mt-[70px] `}>
+      <body className={`${inter.className} mb-20 fixed `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <BackgroundAnimatation />
           {/* <NavigationMenuDemo /> */}
 
           {children}
