@@ -94,7 +94,7 @@ const Contact = () => {
                       <Input
                         placeholder="Your Full Name"
                         {...field}
-                        className="h-[43px]  text-sm bg-basic"
+                        className="h-[43px]  text-sm bg-accent"
                       />
                     </FormControl>
 
@@ -112,7 +112,7 @@ const Contact = () => {
                       <Input
                         placeholder="Your E Mail"
                         {...field}
-                        className="h-[43px] text-sm bg-basic"
+                        className="h-[43px] text-sm bg-accent"
                       />
                     </FormControl>
                     <FormMessage />
@@ -129,7 +129,7 @@ const Contact = () => {
                   <FormControl>
                     <Textarea
                       placeholder="Your Message"
-                      className="h-[100px] text-sm bg-basic "
+                      className="h-[100px] text-sm bg-accent "
                       {...field}
                     />
                   </FormControl>

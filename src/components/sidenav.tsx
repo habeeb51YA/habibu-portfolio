@@ -34,11 +34,11 @@ export const Sidenav: React.FC = () => {
     });
   };
 
-  const observer = new IntersectionObserver(handleSectionVisibility, {
-    threshold: 0.5,
-  });
-
   useEffect(() => {
+    const observer = new IntersectionObserver(handleSectionVisibility, {
+      threshold: 0.5,
+    });
+
     navigation.forEach((nav) => {
       const section = document.getElementById(nav.section);
       if (section) {
@@ -49,7 +49,7 @@ export const Sidenav: React.FC = () => {
     return () => {
       observer.disconnect();
     };
-  }, [observer]);
+  }, []);
 
   const navigation = [
     // {

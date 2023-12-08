@@ -10,7 +10,9 @@ export const Projects = () => {
     <div>
       {" "}
       <TitleHeading title="Projects" />
-      <div>{/* <ProjectCard /> */}</div>
+      <div>
+        <ProjectCard />
+      </div>
     </div>
   );
 };

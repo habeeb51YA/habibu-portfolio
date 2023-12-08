@@ -36,13 +36,13 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
     return projects;
   }
   return (
-    <div className="flex justify-between flex-col min-h-[500px]">
+    <div className="flex justify-between items-center flex-col min-h-[500px] ">
       <div className="grid grid-cols-2 gap-8  ">
         {projects?.map((project: IProjectCard, id: number) => {
           return (
             <div
               key={id}
-              className="flex items-center justify-center border border-1 border-icon rounded-xl w-full"
+              className="flex items-center justify-center border border-1 border-destructive-foreground  hover:border-icon rounded-xl w-full p-4"
             >
               <Link
                 href={project?.projectUrl as string}
@@ -64,10 +64,10 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
                         width={150}
                         height={150}
                         className="border rounded-lg"
-                        style={{ width: "150px", height: "150px" }}
+                        style={{ width: "210px", height: "160px" }}
                       />
                     </div>
-                    <div className="text-[14px] text-title">
+                    <div className="text-[14px] text-ring">
                       {" "}
                       {project?.name}
                     </div>
