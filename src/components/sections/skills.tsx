@@ -1,16 +1,16 @@
 import React, { ReactNode } from "react";
-import { Figma, Github } from "lucide-react";
+import { PiFigmaLogoLight } from "react-icons/pi";
 import { BiLogoFirebase } from "react-icons/bi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { SiTestinglibrary } from "react-icons/si";
 import { BsWordpress } from "react-icons/bs";
 import { TitleHeading } from "../titleHeading";
-
+import { PiGithubLogo } from "react-icons/pi";
 type IconProps = {
   color?: string;
   className: string;
-  size?: number;
+  size?: number | string;
 };
 
 type skillIconProps = {
@@ -23,13 +23,13 @@ const skills = () => {
     {
       title: "Github",
       icon: ({ className, color, size }: IconProps) => (
-        <Github className={className} color={color} size={size} />
+        <PiGithubLogo className={className} color={color} size={size} />
       ),
     },
     {
       title: "Figma",
       icon: ({ className, color, size }: IconProps) => (
-        <Figma className={className} color={color} size={size} />
+        <PiFigmaLogoLight className={className} color={color} size={size} />
       ),
     },
     {
@@ -64,9 +64,9 @@ const skills = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="mt-[400px] md:mt-[0px]">
       <TitleHeading title="Skills" />
-      <div className="w-full grid place-items-center grid-cols-4 gap-x-4 gap-y-12 ">
+      <div className="w-full grid place-items-center grid-cols-3 gap-x-2 gap-y-8  lg:grid-cols-4 lg:gap-x-4 lg:gap-y-12 ">
         {SkillIcons.map((val: skillIconProps, id: number) => {
           // const Icon = () => {
           //   val.icon({ className: "border-1", color: "red" });
@@ -77,11 +77,12 @@ const skills = () => {
               <div>
                 {val.icon({
                   className:
-                    "border-2 hover:border-icon border-destructive-foreground rounded-full  text-[100px] p-6 text-icon ",
-                  size: 100,
+                    "border-2 hover:border-icon border-destructive-foreground rounded-full  text-[75px] sm:text-[100px] p-3 sm:p-6 text-icon ",
                 })}
               </div>
-              <div className="mt-4 text-ring text-[14px]">{val.title}</div>
+              <div className="mt-4 text-ring text-[10px] sm:text-[14px]">
+                {val.title}
+              </div>
             </div>
           );
         })}

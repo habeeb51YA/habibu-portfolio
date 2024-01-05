@@ -101,39 +101,59 @@ export const Sidenav: React.FC = () => {
   ];
 
   return (
-    <div>
-      {navigation.map((nav: navIconProps, id) => {
-        return (
-          <div key={id}>
-            <div className="hoverButton">
+    <div className="flex sm:flex-col w-full  sm:w-[70px] ml-0 sm:ml-[40px] lg:ml-[30px] ">
+      <motion.div
+        whileHover={{ scale: 1 }}
+        onClick={() => {
+          // handleScrollToSection(nav.section as string);
+          // setSelectedLink(nav.section as string);
+        }}
+        className={`mb-4 hidden sm:flex rounded-md  shadow-none md:shadow-sm shadow-transparent md:shadow-accent-foreground flex flex-row sm:flex-col  h-[70px] w-full items-center justify-center p-x-2  p-y-2 sm:p-y-8 bg-input`}
+      >
+        <div className="flex justify-end items-center">
+          {" "}
+          <ModeToggle />
+        </div>
+        {/* <div className=" mt-[10px] w-[1px]  sm:w-[40px]  bg-gradient-to-r from-[#515151]  h-[40px] sm:h-[1px]"></div> */}
+      </motion.div>
+      <div className="flex sm:flex-col  w-full">
+        {navigation.map((nav: navIconProps, id) => {
+          return (
+            <div key={id} className="w-full bg-input">
               <motion.button
                 whileHover={{ scale: 1 }}
                 onClick={() => {
                   handleScrollToSection(nav.section as string);
                   setSelectedLink(nav.section as string);
                 }}
-                className={`rounded-md ml-[27px] mb-3 shadow-sm shadow-accent-foreground flex flex-col h-[60px] w-[60px] items-center justify-center p-x-4 p-y-6 bg-input`}
+                className={` rounded-md shadow-none md:shadow-sm shadow-transparent md:shadow-accent-foreground flex flex-row sm:flex-col  h-[60px] w-[70px] items-center justify-center p-x-2 p-y-0 sm:p-y-10 bg-input`}
               >
-                <div className="mb-1">
-                  {nav.icon({
-                    className: `${
+                <div className="flex flex-col items-center justify-center w-full">
+                  {" "}
+                  <div className=" mb-[5px]">
+                    {nav.icon({
+                      className: `${
+                        selectedLink === nav.section
+                          ? "text-icon"
+                          : "text-title"
+                      } w-[17px] md:w-[18px] h-[17px] md:h-[18px]`,
+                    })}
+                  </div>
+                  <div
+                    className={`text-[8.5px] sm:text-[7.5px] lg:text-[8.5px] w-full ${
                       selectedLink === nav.section ? "text-icon" : "text-title"
-                    }`,
-                    size: 18,
-                  })}
+                    }`}
+                  >
+                    {nav.name}
+                  </div>
                 </div>
-                <div
-                  className={`text-[9px] ${
-                    selectedLink === nav.section ? "text-icon" : "text-title"
-                  }`}
-                >
-                  {nav.name}
-                </div>
+
+                <div className=" mt-0 sm:mt-[10px]  w-[1px]  sm:w-[40px]  bg-gradient-to-r from-[#515151]  h-[40px] sm:h-[1px]"></div>
               </motion.button>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

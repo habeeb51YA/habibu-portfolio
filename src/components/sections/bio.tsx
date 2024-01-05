@@ -86,30 +86,32 @@ export const Bio = () => {
   ];
 
   return (
-    <div className="flex relative">
+    <div className={`flex relative w-full`}>
       {" "}
-      <div className=" bg-icon opacity-10 h-[670px] w-[490px] rounded-md"></div>
-      <div className="bg-input h-[675px] w-[490px] absolute top-[16px] left-[20px] rounded-md shadow-black shadow-md ">
+      <div className="bg-icon opacity-10 w-full mx-auto h-[500px] min-w-[500px] sm:h-[640px] sm:w-[540px] md:w-[585px] lg:w-[480px]  rounded-md"></div>
+      <div className="bg-input w-full mx-auto h-full sm:w-[540px] min-w-[500px] md:w-[585px] lg:w-[480px]  lg:h-[640px]  absolute top-[0px] sm:top-[16px] left-[0px] sm:left-[25px] rounded-md shadow-black shadow-md ">
         <div className="h-[350px] relative overflow-hidden">
           <Image
-            className={`${theme === "light" ? "opacity-none" : "opacity-80"} `}
+            className={`${
+              theme === "light" ? "opacity-none" : "opacity-80"
+            } w-[100%] h-[250px] sm:h-[100%]`}
             src="/background1.jpg"
             alt="background_picture"
-            width={690}
-            height={60}
             id="myImg"
-            style={{ width: "100%", height: "330px" }}
+            fill
+            // style={{ width: "100%", height: "330px" }}
           />
-          <svg
+
+          {/* <svg
             className="absolute top-[213px] left-0 w-100"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M0,25 Q50,0 100,25 Z" fill="#212121" />
-          </svg>
+          </svg> */}
         </div>
         <div className="flex items-center justify-center mt-[-120px]">
-          <Avatar className="w-[130px] h-[130px]">
+          <Avatar className="w-[130px] h-[130px] shadow-sm shadow-accent-foreground">
             <AvatarImage
               src="https://github.com/shadcn.png"
               alt="profile_photo"
@@ -118,7 +120,7 @@ export const Bio = () => {
           </Avatar>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-center">
+        <div className="bg-input mt-12 flex flex-col items-center justify-center">
           <div className=" text-title text-[23px]">Habibu Yusuf Abdulhamid</div>
           <div className="text-icon text-[15px]">Software Developer</div>
           <div className="flex items-center justify-center mt-5">
@@ -136,7 +138,8 @@ export const Bio = () => {
               );
             })}
           </div>
-          <div className="grid grid-cols-2 mt-10 w-full  gap-10">
+          <div className=" mt-[40px] w-full bg-gradient-to-r from-[#515151] h-[1px]"></div>
+          <div className="flex justify-between items-center mt-3 w-full ">
             <div
               className=" hoverButton flex items-center justify-center cursor-pointer p-4"
               onClick={() => {
@@ -145,14 +148,20 @@ export const Bio = () => {
                 );
               }}
             >
-              <span className=" mr-6 text-[16px] text-title">View CV</span>
+              <span className=" mr-3  sm:mr-6 text-[14px] sm:text-[16px] text-title">
+                View CV
+              </span>
               <Download className="text-icon" size={18} />
             </div>
+            <div className=" ml-[10px] w-[1px] bg-gradient-to-r from-[#515151] h-[40px]"></div>
             <div
               className=" hoverButton flex items-center justify-center cursor-pointer p-4"
               onClick={() => handleScrollToSection("contact-section")}
             >
-              <span className="text-[16px] mr-6 text-title"> Contact Me</span>{" "}
+              <span className="text-[14px] sm:text-[16px] mr-3  sm:mr-6 text-title">
+                {" "}
+                Contact Me
+              </span>{" "}
               <Send className="text-icon" size={18} />
             </div>
           </div>

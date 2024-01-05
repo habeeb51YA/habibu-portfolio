@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 
 const BackgroundAnimatation = (
   props: SVGProps<SVGSVGElement>,
-  children: React.ReactNode
+  className?: string
 ) => (
   <svg
-    className=" w-screen min-h-screen"
+    className={` bg-accent-foreground h-full w-full fixed top-0 left-0 ${className}`}
     viewBox="0 0 1251 776"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
     <g clipPath="url(#clip0_4_2)">
-      <rect width={1251} height={776} fill="#191919" />
+      <rect fill="#191919" className="w-full h-full h-max" />
       <motion.path
         d="M26.4457 2.18857V774.473"
         stroke="#F2A93A"
@@ -23,6 +23,7 @@ const BackgroundAnimatation = (
         strokeLinecap="round"
         animate={{ y: [1200, -900], opacity: [0.8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
+        className="min-h-screen"
       />
       <g filter="url(#filter0_d_4_2)">
         <motion.path

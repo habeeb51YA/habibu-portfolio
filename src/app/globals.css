@@ -93,9 +93,9 @@
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 0, 0%, 56%;
+    --muted-foreground: 0, 0%, 17%;
     --accent: 0, 0%, 32%;
-    --accent-foreground: 0, 0%, 32%;
+    --accent-foreground: 0, 0%, 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0, 0%, 46%;
     --border: 217.2 32.6% 17.5%;
@@ -141,13 +141,14 @@
     left: 0;
   }
 }
+
 /* For Webkit-based browsers (e.g., Chrome, Safari) */
 ::-webkit-scrollbar {
   width: 4px; /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Track color */
+  background: #212121; /* Track color */
 }
 ::-webkit-scrollbar-thumb {
   background: #515151; /* Thumb color */
