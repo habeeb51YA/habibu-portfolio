@@ -11,13 +11,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Habibu's portfolio",
   description: "A portfolio site for habibu yusuf abdulhamid",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    minimumScale: 1,
-    userScalable: true,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: true,
 };
 
 export default function RootLayout({
@@ -27,15 +28,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} mb-20 fixed `}>
+      <body className={`${inter.className} h-full mb-20 relative   `}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <BackgroundAnimatation />
-          {/* <NavigationMenuDemo /> */}
+          <div className="absolute h-max h-full w-full bg-accent-foreground">
+            <BackgroundAnimatation />
+          </div>
 
           {children}
           <Toaster />

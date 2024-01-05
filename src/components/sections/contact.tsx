@@ -88,13 +88,13 @@ const Contact = () => {
                 control={form.control}
                 name="fullname"
                 render={({ field }) => (
-                  <FormItem className="w-full mr-16 ">
+                  <FormItem className="w-full mr-4 sm:mr-16 ">
                     <FormLabel className="text-sm">Full Name</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your Full Name"
                         {...field}
-                        className="h-[43px]  text-sm bg-accent"
+                        className="h-[33px] sm:h-[43px]  text-sm bg-accent"
                       />
                     </FormControl>
 
@@ -112,7 +112,7 @@ const Contact = () => {
                       <Input
                         placeholder="Your E Mail"
                         {...field}
-                        className="h-[43px] text-sm bg-accent"
+                        className="h-[33px] sm:h-[43px] text-sm bg-accent"
                       />
                     </FormControl>
                     <FormMessage />
@@ -129,7 +129,7 @@ const Contact = () => {
                   <FormControl>
                     <Textarea
                       placeholder="Your Message"
-                      className="h-[100px] text-sm bg-accent "
+                      className="h-[65px] smh-[100px] text-sm bg-accent "
                       {...field}
                     />
                   </FormControl>
