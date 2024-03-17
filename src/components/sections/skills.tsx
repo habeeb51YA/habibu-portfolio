@@ -76,6 +76,7 @@ const skills = () => {
           return (
             <div key={id} className="flex flex-col items-center justify-center">
               {/* <Icon /> */}
+              {/* <Icon /> */}
               <div>
                 {val.icon({
                   className: `${
