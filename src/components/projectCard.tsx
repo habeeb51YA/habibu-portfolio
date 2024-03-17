@@ -5,6 +5,7 @@ import { collection, getDocs, query } from "firebase/firestore";
 import { db } from "@/services/firebase/config";
 import { ChevronsUp } from "lucide-react";
 import { handleScrollToSection } from "./sidenav";
+import { useTheme } from "next-themes";
 interface IProjectCard {
   name?: string;
   imgUrl?: string;
@@ -14,6 +15,7 @@ interface IProjectCard {
 
 export const ProjectCard: React.FC<IProjectCard> = () => {
   const [projects, setProjects] = useState([]);
+  const { theme, setTheme } = useTheme();
   useEffect(() => {
     getProjects();
   }, [projects]);
@@ -42,7 +44,11 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
           return (
             <div
               key={id}
-              className="flex items-center justify-center border border-1 border-destructive-foreground  hover:border-icon rounded-xl w-full px-4 py-3"
+              className={`${
+                theme === "light"
+                  ? " border-primary hover:border-secondary"
+                  : " border-border hover:border-primary "
+              } flex items-center justify-center border border-1 rounded-xl w-full px-4 py-3`}
             >
               <Link
                 href={project?.projectUrl as string}
@@ -67,7 +73,7 @@ export const ProjectCard: React.FC<IProjectCard> = () => {
                         style={{ width: "210px", height: "160px" }}
                       />
                     </div>
-                    <div className="text-[14px] text-ring">
+                    <div className="text-[14px] text-secondary">
                       {" "}
                       {project?.name}
                     </div>

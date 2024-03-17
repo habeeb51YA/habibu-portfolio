@@ -35,7 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="absolute h-max h-full w-full bg-accent-foreground">
+          <div className="absolute h-max h-full w-full bg-foreground">
             <BackgroundAnimatation />
           </div>
 

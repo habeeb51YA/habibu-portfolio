@@ -51,7 +51,7 @@ const Home = () => {
         <div className="flex relative lg:fixed ">
           <div className="flex w-screen sm:w-full flex-col lg:flex-row ">
             <div className="fixed top-0 left-0 right-0 sm:top-[50px] sm:left-[-100px] sm:absolute sm:top-[50px] lg:top-[100px] lg:left-[-100px] z-50">
-              <div className="bg-input h-[70px] grid sm:hidden ">
+              <div className="bg-background h-[70px] grid sm:hidden ">
                 <div className=" flex justify-end items-center">
                   {" "}
                   <ModeToggle />
@@ -71,7 +71,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="snap-y snap-mandatory shadow-lg shadow-inner ml-0 sm:ml-[20px] lg:ml-0 lg:ml-4 px-5 md:px-12 bg-input border-1 border-secondary h-full lg:h-[610px] w-full min-w-[500px] sm:w-[540px] md:w-[585px] lg:w-full 2xl:w-[650px] mt-10  pt-8 rounded-md  lg:overflow-y-scroll pt-10">
+              <div className="snap-y snap-mandatory shadow-lg shadow-inner ml-0 sm:ml-[20px] lg:ml-0 lg:ml-4 px-5 md:px-12 bg-background border-1 border-secondary h-full lg:h-[610px] w-full min-w-[500px] sm:w-[540px] md:w-[585px] lg:w-full 2xl:w-[650px] mt-10  pt-8 rounded-md  lg:overflow-y-scroll pt-10">
                 {" "}
                 {sections.map((val, index) => {
                   return (
