@@ -110,7 +110,7 @@ const Contact = () => {
                           onClick={() => {
                             router.push("/home");
                           }}
-                          className=" cursor-pointer w-[150px] border-2 border-accent-foreground rounded-full flex items-center"
+                          className=" cursor-pointer w-[150px] border-2 border-foreground rounded-full flex items-center"
                         >
                           <ChevronLeftCircle
                             className=" text-icon  p-3 mr-4"

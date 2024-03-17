@@ -88,7 +88,11 @@ export const Bio = () => {
   return (
     <div className={`flex relative w-full`}>
       {" "}
-      <div className="bg-icon opacity-10 w-full mx-auto h-[500px] min-w-[500px] sm:h-[640px] sm:w-[540px] md:w-[585px] lg:w-[480px]  rounded-md"></div>
+      <div
+        className={`${
+          theme === "light" ? " bg-basic-foreground " : " bg-primary opacity-20"
+        } w-full mx-auto h-[500px] min-w-[500px] sm:h-[640px] sm:w-[540px] md:w-[585px] lg:w-[480px]  rounded-md`}
+      ></div>
       <div className="bg-input w-full mx-auto h-full sm:w-[540px] min-w-[500px] md:w-[585px] lg:w-[480px]  lg:h-[640px]  absolute top-[0px] sm:top-[16px] left-[0px] sm:left-[25px] rounded-md shadow-black shadow-md ">
         <div className="h-[350px] relative overflow-hidden">
           <Image
@@ -111,26 +115,36 @@ export const Bio = () => {
           </svg> */}
         </div>
         <div className="flex items-center justify-center mt-[-120px]">
-          <Avatar className="w-[130px] h-[130px] shadow-sm shadow-accent-foreground">
+          <Avatar className="w-[130px] h-[130px] shadow-sm shadow-foreground">
             <AvatarImage
-              src="https://github.com/shadcn.png"
+              className="object-cover"
+              src={
+                "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2Fprofile.jpg?alt=media&token=23e70652-def2-44ce-bd24-4c84bb0804d3" ||
+                "https://github.com/shadcn.png"
+              }
               alt="profile_photo"
             />
             <AvatarFallback>Profile Picture</AvatarFallback>
           </Avatar>
         </div>
 
-        <div className="bg-input mt-12 flex flex-col items-center justify-center">
+        <div className="bg-input mt-10 flex flex-col items-center justify-center">
           <div className=" text-title text-[23px]">Habibu Yusuf Abdulhamid</div>
-          <div className="text-icon text-[15px]">Software Developer</div>
-          <div className="flex items-center justify-center mt-5">
+          <div className="text-primary text-[15px] mt-2">
+            Software Developer
+          </div>
+          <div className="flex items-center justify-center mt-3">
             {SkillIcons.map((val: skillIconProps, id: number) => {
               return (
-                <div key={id} className="hoverButton mr-4 cursor-pointer">
+                <div key={id} className="hoverButton mr-1 cursor-pointer">
                   <div>
                     {val.icon({
-                      className:
-                        "border-2 text-icon hover:text-accent-foreground hover:bg-icon border-accent-foreground rounded-full p-[10px]",
+                      className: `${
+                        theme === "light"
+                          ? " border-none text-title"
+                          : " border-none text-primary"
+                      } border  hover:text-foreground hover:bg-primary rounded-full p-[10px]`,
+
                       size: 40,
                     })}
                   </div>
@@ -151,7 +165,7 @@ export const Bio = () => {
               <span className=" mr-3  sm:mr-6 text-[14px] sm:text-[16px] text-title">
                 View CV
               </span>
-              <Download className="text-icon" size={18} />
+              <Download className="text-primary" size={18} />
             </div>
             <div className=" ml-[10px] w-[1px] bg-gradient-to-r from-[#515151] h-[40px]"></div>
             <div
@@ -162,7 +176,7 @@ export const Bio = () => {
                 {" "}
                 Contact Me
               </span>{" "}
-              <Send className="text-icon" size={18} />
+              <Send className="text-primary" size={18} />
             </div>
           </div>
         </div>

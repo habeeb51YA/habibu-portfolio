@@ -33,7 +33,6 @@ module.exports = {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -60,16 +59,9 @@ module.exports = {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
         basic: {
           DEFAULT: "hsl(var(--basic))",
           foreground: "hsl(var(--basic-foreground))",
-        },
-        icon: {
-          DEFAULT: "hsl(var(--icon))",
         },
         sub: {
           DEFAULT: "hsl(var(--sub))",

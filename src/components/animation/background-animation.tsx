@@ -8,7 +8,7 @@ const BackgroundAnimatation = (
   className?: string
 ) => (
   <svg
-    className={` bg-accent-foreground h-full w-full fixed top-0 left-0 ${className}`}
+    className={` bg-foreground h-full w-full fixed top-0 left-0 ${className}`}
     viewBox="0 0 1251 776"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

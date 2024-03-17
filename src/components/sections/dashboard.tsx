@@ -8,7 +8,7 @@ const Dashboard = () => {
         <div className="text-[33px] text-title">
           Hello, I am Habibu Yusuf Abdulhamid
         </div>
-        <div className="mt-4 text-ring  text-[18px] italic leading-7 font-normal">
+        <div className="mt-4 text-secondary  text-[18px] italic leading-7 font-normal">
           A Software developer from Nigeria. I have rich experience in building
           user friendly and responsive web based applications.
           {/* I am willing to

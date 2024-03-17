@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <div>
       <TitleHeading title="About Me" />
-      <div className="text-ring text-[15px] ClassProperties leading-7">
+      <div className="text-secondary text-[15px] ClassProperties leading-7">
         Greetings! I'm Habibu Yusuf Abdulhamid, an enthusiastic and dedicated
         software developer hailing from Nigeria, currently residing in the
         vibrant city of Abuja. My expertise involves a rich tapestry of

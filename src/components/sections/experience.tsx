@@ -27,7 +27,7 @@ const Experience: React.FC = () => {
       <TitleHeading
         title={
           <div>
-            Education <span className="text-icon">&</span> Experience
+            Education <span className="text-primary">&</span> Experience
           </div>
         }
       />
@@ -35,13 +35,17 @@ const Experience: React.FC = () => {
         return (
           <div key={id} className="">
             <div className="flex ">
-              <div className="mr-12 border-l-2  border-destructive-foreground mb-16"></div>
+              <div className="mr-12 border-l-2  border-border mb-16"></div>
               <div>
                 {" "}
-                <div className="mt-1 text-[20px] text-icon">{val?.title}</div>
-                <div className="mt-1 text-[17px]">{val.role}</div>
-                <div className="mt-1 text-[15px] text-ring">{val.date}</div>
-                <div className="mt-2  mb-10 text-[14px] text-ring">
+                <div className="mt-1 text-[20px] text-primary">
+                  {val?.title}
+                </div>
+                <div className="mt-1 text-title text-[17px]">{val.role}</div>
+                <div className="mt-1 text-[15px] text-secondary">
+                  {val.date}
+                </div>
+                <div className="mt-2  mb-10 text-[14px] text-secondary">
                   {val.company}
                 </div>
               </div>

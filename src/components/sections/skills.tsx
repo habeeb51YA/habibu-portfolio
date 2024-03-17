@@ -7,6 +7,7 @@ import { SiTestinglibrary } from "react-icons/si";
 import { BsWordpress } from "react-icons/bs";
 import { TitleHeading } from "../titleHeading";
 import { PiGithubLogo } from "react-icons/pi";
+import { useTheme } from "next-themes";
 type IconProps = {
   color?: string;
   className: string;
@@ -19,6 +20,7 @@ type skillIconProps = {
 };
 
 const skills = () => {
+  const { theme, setTheme } = useTheme();
   const SkillIcons = [
     {
       title: "Github",
@@ -74,13 +76,17 @@ const skills = () => {
           return (
             <div key={id} className="flex flex-col items-center justify-center">
               {/* <Icon /> */}
+              {/* <Icon /> */}
               <div>
                 {val.icon({
-                  className:
-                    "border-2 hover:border-icon border-destructive-foreground rounded-full  text-[75px] sm:text-[100px] p-3 sm:p-6 text-icon ",
+                  className: `${
+                    theme === "light"
+                      ? " border-primary hover:border-secondary"
+                      : " border-border hover:border-primary "
+                  } border-2 rounded-full  text-[75px] sm:text-[100px] p-3 sm:p-6 text-primary `,
                 })}
               </div>
-              <div className="mt-4 text-ring text-[10px] sm:text-[14px]">
+              <div className="mt-4 text-secondary text-[10px] sm:text-[14px]">
                 {val.title}
               </div>
             </div>

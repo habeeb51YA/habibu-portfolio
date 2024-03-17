@@ -75,7 +75,7 @@ const Contact = () => {
     <div>
       {" "}
       <TitleHeading title="Contact" />
-      <div className="mb-12 text-ring italic text-[16px]">
+      <div className="mb-12 text-secondary italic text-[16px]">
         Thank you for reaching out, I would love to hear from you! weather you
         have a question, a comment, or just to chat.
       </div>
@@ -89,7 +89,9 @@ const Contact = () => {
                 name="fullname"
                 render={({ field }) => (
                   <FormItem className="w-full mr-4 sm:mr-16 ">
-                    <FormLabel className="text-sm">Full Name</FormLabel>
+                    <FormLabel className="text-sm text-title">
+                      Full Name
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your Full Name"
@@ -107,7 +109,7 @@ const Contact = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel className="text-sm">E Mail</FormLabel>
+                    <FormLabel className="text-sm text-title">E Mail</FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Your E Mail"
@@ -125,11 +127,11 @@ const Contact = () => {
               name="message"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel className="text-sm">Message</FormLabel>
+                  <FormLabel className="text-sm text-title">Message</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Your Message"
-                      className="h-[65px] smh-[100px] text-sm bg-accent "
+                      className="h-[65px] smh-[100px] text-sm bg-accent"
                       {...field}
                     />
                   </FormControl>
@@ -139,7 +141,7 @@ const Contact = () => {
             />
             <Button
               type="submit"
-              className="mt-8 mb-3 bg-icon hover:bg-popover hover:text-title text-sm py-5 px-6"
+              className="mt-8 mb-3 bg-primary hover:bg-popover hover:text-title text-sm py-5 px-6"
             >
               Send Message
             </Button>
@@ -152,7 +154,7 @@ const Contact = () => {
           handleScrollToSection("dashboard-section");
         }}
       >
-        <ChevronsUp className="text-icon" size={38} />
+        <ChevronsUp className="text-primary" size={38} />
       </div>
     </div>
   );

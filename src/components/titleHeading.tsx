@@ -24,7 +24,6 @@ export const TitleHeading: React.FC<titleHeadingProp> = ({
         <div className="text-[21px]  font-normal  text-title"> {title}</div>
       )}
 
-      {/* <div className=" mt-[30px] border-b-[1px] border-accent-foreground mb-10"></div> */}
       <div className=" mt-[25px] mb-[30px] w-full bg-gradient-to-r from-[#515151] h-[1px]"></div>
     </div>
   );

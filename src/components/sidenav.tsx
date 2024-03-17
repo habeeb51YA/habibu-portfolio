@@ -101,14 +101,14 @@ export const Sidenav: React.FC = () => {
   ];
 
   return (
-    <div className="flex sm:flex-col w-full  sm:w-[70px] ml-0 sm:ml-[40px] lg:ml-[30px] ">
+    <div className="flex sm:flex-col w-full  sm:w-[70px] ml-0 sm:ml-[40px] lg:ml-[40px] ">
       <motion.div
         whileHover={{ scale: 1 }}
         onClick={() => {
           // handleScrollToSection(nav.section as string);
           // setSelectedLink(nav.section as string);
         }}
-        className={`mb-4 hidden sm:flex rounded-md  shadow-none md:shadow-sm shadow-transparent md:shadow-accent-foreground flex flex-row sm:flex-col  h-[70px] w-full items-center justify-center p-x-2  p-y-2 sm:p-y-8 bg-input`}
+        className={`mb-4 hidden sm:flex rounded-md  shadow-none md:shadow-sm shadow-transparent md:shadow-foreground flex flex-row sm:flex-col  h-[70px] w-full items-center justify-center p-x-2  p-y-2 sm:p-y-8 bg-background`}
       >
         <div className="flex justify-end items-center">
           {" "}
@@ -119,14 +119,14 @@ export const Sidenav: React.FC = () => {
       <div className="flex sm:flex-col  w-full">
         {navigation.map((nav: navIconProps, id) => {
           return (
-            <div key={id} className="w-full bg-input">
+            <div key={id} className="w-full bg-background">
               <motion.button
                 whileHover={{ scale: 1 }}
                 onClick={() => {
                   handleScrollToSection(nav.section as string);
                   setSelectedLink(nav.section as string);
                 }}
-                className={` rounded-md shadow-none md:shadow-sm shadow-transparent md:shadow-accent-foreground flex flex-row sm:flex-col  h-[60px] w-[70px] items-center justify-center p-x-2 p-y-0 sm:p-y-10 bg-input`}
+                className={` rounded-md shadow-none md:shadow-sm shadow-transparent md:shadow-foreground flex flex-row sm:flex-col  h-[60px] w-[70px] items-center justify-center p-x-2 p-y-0 sm:p-y-10 bg-background`}
               >
                 <div className="flex flex-col items-center justify-center w-full">
                   {" "}
@@ -134,14 +134,16 @@ export const Sidenav: React.FC = () => {
                     {nav.icon({
                       className: `${
                         selectedLink === nav.section
-                          ? "text-icon"
+                          ? "text-primary"
                           : "text-title"
                       } w-[17px] md:w-[18px] h-[17px] md:h-[18px]`,
                     })}
                   </div>
                   <div
                     className={`text-[8.5px] sm:text-[7.5px] lg:text-[8.5px] w-full ${
-                      selectedLink === nav.section ? "text-icon" : "text-title"
+                      selectedLink === nav.section
+                        ? "text-primary"
+                        : "text-title"
                     }`}
                   >
                     {nav.name}
