@@ -101,7 +101,7 @@ export const Sidenav: React.FC = () => {
   ];
 
   return (
-    <div className="flex sm:flex-col w-full  sm:w-[70px] ml-0 sm:ml-[40px] lg:ml-[40px] ">
+    <div className="flex sm:flex-col w-full  sm:w-[70px] ml-0 sm:ml-[0px] lg:ml-[40px] ">
       <motion.div
         whileHover={{ scale: 1 }}
         onClick={() => {
