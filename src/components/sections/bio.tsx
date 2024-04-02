@@ -98,33 +98,27 @@ export const Bio = () => {
           <Image
             className={`${
               theme === "light" ? "opacity-none" : "opacity-80"
-            } w-[100%] h-[250px] sm:h-[100%]`}
+            } w-[100%] h-[250px] sm:h-[100%] [clip-path:polygon(0%_0%,_100%_0%,_100%_97%,_50%_87%,_0_100%)]`}
             src="/background1.jpg"
             alt="background_picture"
             id="myImg"
             fill
-            // style={{ width: "100%", height: "330px" }}
           />
-
-          {/* <svg
-            className="absolute top-[213px] left-0 w-100"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0,25 Q50,0 100,25 Z" fill="#212121" />
-          </svg> */}
         </div>
-        <div className="flex items-center justify-center mt-[-120px]">
+        <div className="flex items-center justify-center mt-[-200px] sm:mt-[-120px]">
           <Avatar className="w-[130px] h-[130px] shadow-sm shadow-foreground">
             <AvatarImage
               className="object-cover"
-              src={
-                "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2Fprofile.jpg?alt=media&token=23e70652-def2-44ce-bd24-4c84bb0804d3" ||
-                "https://github.com/shadcn.png"
-              }
+              src={`${
+                theme === "light"
+                  ? "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2Fprofile4.png?alt=media&token=382f8f55-9779-4f06-b0ce-f26c0969601f"
+                  : "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2Fprofile3.png?alt=media&token=2e839658-8c43-489f-9071-50a71faeb56f"
+              }`}
               alt="profile_photo"
             />
-            <AvatarFallback>Profile Picture</AvatarFallback>
+            <AvatarFallback>
+              <img src="https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2FprofilePlaceholder2.png?alt=media&token=4854edb9-4e6e-4f0e-8e7c-c947d98fd71d" />
+            </AvatarFallback>
           </Avatar>
         </div>
 
@@ -158,7 +152,7 @@ export const Bio = () => {
               className=" hoverButton flex items-center justify-center cursor-pointer p-4"
               onClick={() => {
                 handleRedirect(
-                  "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/resume%2FHabibu%20Yusuf%20Abdulhamid%20resume..pdf?alt=media&token=149d8bf0-27a9-46e4-b477-1592fb4b686a"
+                  "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/resume%2FHabibu%20Yusuf%20Abdulhamid%20CV..pdf?alt=media&token=0d4813e6-a594-4d17-9b51-8b1e9aee7a80"
                 );
               }}
             >

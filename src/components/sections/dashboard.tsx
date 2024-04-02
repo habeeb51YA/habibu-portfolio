@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const Dashboard = () => {
+  const { theme, setTheme } = useTheme();
   return (
     <div>
-      <div className="pt-[110px]">
+      <div className=" pt-[90px] lg:pt-[110px]">
         <div className="text-[33px] text-title">
           Hello, I am Habibu Yusuf Abdulhamid
         </div>
@@ -16,7 +18,11 @@ const Dashboard = () => {
         </div>
         <div className="flex justify-end items-start mt-[65px]">
           <Image
-            src="/logo.png"
+            src={`${
+              theme === "light"
+                ? "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2FlogoLight.png?alt=media&token=499ea7cb-e7ee-40ba-a124-9b58d076f68f"
+                : "https://firebasestorage.googleapis.com/v0/b/habibu-portfolio-c8dbc.appspot.com/o/projects%2FlogoDark4.png?alt=media&token=2c1a28bf-2a64-4deb-aee8-06a002556790"
+            }`}
             alt="logo"
             width={130}
             height={130}

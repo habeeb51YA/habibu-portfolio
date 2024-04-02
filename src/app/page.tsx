@@ -40,6 +40,43 @@ const Home = () => {
     },
   ];
 
+  const renderMobileSideBar = () => {
+    return (
+      <div className="fixed hidden sm:flex lg:hidden w-full z-100">
+        <div className=" absolute top-[140px] right-[0px] left-[-60px]">
+          <div className="bg-background h-[70px] grid sm:hidden ">
+            <div className=" flex justify-end items-center">
+              {" "}
+              <ModeToggle />
+            </div>
+
+            <div className="w-full bg-gradient-to-r from-[#515151] h-[1px] "></div>
+          </div>
+          <div className="flex overflow-x-scroll sm:overflow-x-hidden">
+            <Sidenav />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderSideBar = () => {
+    return (
+      <div className="fixed top-0 left-0 right-0  sm:hidden sm:top-[90px] sm:right-[-20px] lg:relative lg:flex  z-50">
+        <div className="bg-background h-[70px] grid sm:hidden ">
+          <div className=" flex justify-end items-center">
+            {" "}
+            <ModeToggle />
+          </div>
+
+          <div className="w-full bg-gradient-to-r from-[#515151] h-[1px] "></div>
+        </div>
+        <div className="flex overflow-x-scroll sm:overflow-x-hidden">
+          <Sidenav />
+        </div>
+      </div>
+    );
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -50,20 +87,10 @@ const Home = () => {
       <div className="flex justify-center ml-0 lg:ml-[20px]">
         <div className="flex relative lg:fixed ">
           <div className="flex w-screen sm:w-full flex-col lg:flex-row ">
-            <div className="fixed top-0 left-0 right-0 sm:top-[50px] sm:left-[-100px] sm:absolute sm:top-[50px] lg:top-[100px] lg:left-[-100px] z-50">
-              <div className="bg-background h-[70px] grid sm:hidden ">
-                <div className=" flex justify-end items-center">
-                  {" "}
-                  <ModeToggle />
-                </div>
+            {renderMobileSideBar()}
+            {renderSideBar()}
 
-                <div className="w-full bg-gradient-to-r from-[#515151] h-[1px] "></div>
-              </div>
-              <div className="flex overflow-x-scroll sm:overflow-x-hidden">
-                <Sidenav />
-              </div>
-            </div>
-            <div className="mt-[145px] sm:mt-[0px] flex items-center justify-center">
+            <div className="mt-[145px] sm:mt-[50px] lg:mt-[0px] flex items-center justify-center">
               <Bio />
             </div>
             <motion.div

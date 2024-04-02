@@ -66,7 +66,7 @@ const skills = () => {
     },
   ];
   return (
-    <div className="mt-[400px] md:mt-[0px]">
+    <div className="mt-0 sm:mt-[400px] md:mt-[0px]">
       <TitleHeading title="Skills" />
       <div className="w-full grid place-items-center grid-cols-3 gap-x-2 gap-y-8  lg:grid-cols-4 lg:gap-x-4 lg:gap-y-12 ">
         {SkillIcons.map((val: skillIconProps, id: number) => {
