@@ -52,9 +52,6 @@ export const Sidenav: React.FC = () => {
   }, []);
 
   const navigation = [
-    // {
-    //   icon: <ModeToggle />,
-    // },
     {
       name: "HOME",
       icon: ({ className, size }: IconProps) => (

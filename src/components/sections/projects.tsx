@@ -7,7 +7,7 @@ import { ProjectCard } from "../projectCard";
 
 export const Projects = () => {
   return (
-    <div>
+    <div className="pt-[40px] lg:pt-[40px]">
       {" "}
       <TitleHeading title="Projects" />
       <div>
