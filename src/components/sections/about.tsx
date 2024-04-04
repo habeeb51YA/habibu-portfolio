@@ -3,7 +3,7 @@ import { TitleHeading } from "../titleHeading";
 
 export const About = () => {
   return (
-    <div>
+    <div className="pt-20 lg:pt-10">
       <TitleHeading title="About Me" />
       <div className="text-secondary text-[15px] ClassProperties leading-7">
         Greetings! I'm Habibu Yusuf Abdulhamid, an enthusiastic and dedicated

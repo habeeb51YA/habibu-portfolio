@@ -87,11 +87,11 @@
 
 /* For Webkit-based browsers (e.g., Chrome, Safari) */
 ::-webkit-scrollbar {
-  width: 4px; /* Width of the scrollbar */
+  width: 3px; /* Width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: #212121; /* Track color */
+  background: transparent; /* Track color */
 }
 ::-webkit-scrollbar-thumb {
   background: #515151; /* Thumb color */

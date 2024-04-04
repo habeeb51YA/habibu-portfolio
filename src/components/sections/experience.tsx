@@ -6,16 +6,21 @@ const Experience: React.FC = () => {
     {
       company: "Feezino Unified Solution",
       title: "Experience",
-      role: "Software Developer",
+      role: "Web Developer",
       date: "September 2020 - May 2021",
     },
     {
       company: "Pramie Technologies",
-      role: "Software Developer",
-      date: "January 2022 - Present",
+      role: "Frontend Developer Developer",
+      date: "January 2022 - Febuary 2024",
     },
+    // {
+    //   company: "DynastyU",
+    //   role: "Web Developer",
+    //   date: "November 2023 - Present",
+    // },
     {
-      company: " Transport Management Technology",
+      company: "Transport Management Technology",
       title: "Education",
       role: "Federal University of Technology, Minna ",
       date: "2014 - 2019",
@@ -23,7 +28,7 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div className="pt-20 lg:pt-10">
       <TitleHeading
         title={
           <div>
@@ -33,19 +38,17 @@ const Experience: React.FC = () => {
       />
       {Experiences.map((val, id) => {
         return (
-          <div key={id} className="">
-            <div className="flex ">
+          <div key={id}>
+            <div className="flex">
               <div className="mr-12 border-l-2  border-border mb-16"></div>
               <div>
                 {" "}
-                <div className="mt-1 text-[20px] text-primary">
-                  {val?.title}
-                </div>
-                <div className="mt-1 text-title text-[17px]">{val.role}</div>
+                <div className="mt-1 text-xl text-primary">{val?.title}</div>
+                <div className="mt-1 text-title text-base">{val.role}</div>
                 <div className="mt-1 text-[15px] text-secondary">
                   {val.date}
                 </div>
-                <div className="mt-2  mb-10 text-[14px] text-secondary">
+                <div className="mt-2  mb-10 text-sm text-secondary">
                   {val.company}
                 </div>
               </div>

@@ -68,11 +68,16 @@ const Contact = () => {
       }
     } catch (err) {
       console.log("err", err);
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Something went wrong, please try again",
+      });
     }
   };
 
   return (
-    <div>
+    <div className="pt-20 lg:pt-10 pb-8 sm:pb-0">
       {" "}
       <TitleHeading title="Contact" />
       <div className="mb-12 text-secondary italic text-[16px]">
@@ -96,7 +101,7 @@ const Contact = () => {
                       <Input
                         placeholder="Your Full Name"
                         {...field}
-                        className="h-[33px] sm:h-[43px]  text-sm bg-accent"
+                        className="h-8 sm:h-11  text-sm bg-accent"
                       />
                     </FormControl>
 
@@ -114,7 +119,7 @@ const Contact = () => {
                       <Input
                         placeholder="Your E Mail"
                         {...field}
-                        className="h-[33px] sm:h-[43px] text-sm bg-accent"
+                        className="h-8 sm:h-11 text-sm bg-accent"
                       />
                     </FormControl>
                     <FormMessage />
@@ -131,7 +136,7 @@ const Contact = () => {
                   <FormControl>
                     <Textarea
                       placeholder="Your Message"
-                      className="h-[65px] smh-[100px] text-sm bg-accent"
+                      className="h-16 sm:h-24 text-sm bg-accent"
                       {...field}
                     />
                   </FormControl>

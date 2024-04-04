@@ -22,13 +22,11 @@ type skillIconProps = {
 };
 
 export const Bio = () => {
-  const router = useRouter();
-
   const handleRedirect = (link: string) => {
     return window.open(link, "_blank");
   };
 
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const SkillIcons = [
     {
       title: "Linkedin",
@@ -86,14 +84,13 @@ export const Bio = () => {
   ];
 
   return (
-    <div className={`flex relative w-full`}>
-      {" "}
+    <div className="flex relative w-full">
       <div
         className={`${
           theme === "light" ? " bg-basic-foreground " : " bg-primary opacity-20"
         } w-full mx-auto h-[500px] min-w-[500px] sm:h-[640px] sm:w-[540px] md:w-[585px] lg:w-[480px]  rounded-md`}
       ></div>
-      <div className="bg-input w-full mx-auto h-full sm:w-[540px] min-w-[500px] md:w-[585px] lg:w-[480px]  lg:h-[640px]  absolute top-[0px] sm:top-[16px] left-[0px] sm:left-[25px] rounded-md shadow-black shadow-md ">
+      <div className="bg-input w-full mx-auto h-full sm:w-[540px] min-w-[500px] md:w-[585px] lg:w-[480px]  lg:h-[660px]  absolute top-0 sm:top-[16px] left-0 sm:left-[25px] rounded-md shadow-black shadow-md ">
         <div className="h-[350px] relative overflow-hidden">
           <Image
             className={`${
@@ -146,7 +143,7 @@ export const Bio = () => {
               );
             })}
           </div>
-          <div className=" mt-[40px] w-full bg-gradient-to-r from-[#515151] h-[1px]"></div>
+          <div className=" mt-10 w-full bg-gradient-to-r from-[#515151] h-[1px]"></div>
           <div className="flex justify-between items-center mt-3 w-full ">
             <div
               className=" hoverButton flex items-center justify-center cursor-pointer p-4"
@@ -156,17 +153,17 @@ export const Bio = () => {
                 );
               }}
             >
-              <span className=" mr-3  sm:mr-6 text-[14px] sm:text-[16px] text-title">
+              <span className=" mr-3  sm:mr-6 text-sm sm:text-base text-title">
                 View CV
               </span>
               <Download className="text-primary" size={18} />
             </div>
-            <div className=" ml-[10px] w-[1px] bg-gradient-to-r from-[#515151] h-[40px]"></div>
+            <div className=" ml-5 w-[1px] bg-gradient-to-r from-[#515151] h-10"></div>
             <div
               className=" hoverButton flex items-center justify-center cursor-pointer p-4"
               onClick={() => handleScrollToSection("contact-section")}
             >
-              <span className="text-[14px] sm:text-[16px] mr-3  sm:mr-6 text-title">
+              <span className="text-sm sm:text-base mr-3  sm:mr-6 text-title">
                 {" "}
                 Contact Me
               </span>{" "}

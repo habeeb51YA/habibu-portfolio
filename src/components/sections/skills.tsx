@@ -20,7 +20,7 @@ type skillIconProps = {
 };
 
 const skills = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const SkillIcons = [
     {
       title: "Github",
@@ -66,17 +66,12 @@ const skills = () => {
     },
   ];
   return (
-    <div className="mt-0 sm:mt-[400px] md:mt-[0px]">
+    <div className=" pt-20 lg:pt-10">
       <TitleHeading title="Skills" />
       <div className="w-full grid place-items-center grid-cols-3 gap-x-2 gap-y-8  lg:grid-cols-4 lg:gap-x-4 lg:gap-y-12 ">
         {SkillIcons.map((val: skillIconProps, id: number) => {
-          // const Icon = () => {
-          //   val.icon({ className: "border-1", color: "red" });
-          // };
           return (
             <div key={id} className="flex flex-col items-center justify-center">
-              {/* <Icon /> */}
-              {/* <Icon /> */}
               <div>
                 {val.icon({
                   className: `${
@@ -86,7 +81,7 @@ const skills = () => {
                   } border-2 rounded-full  text-[75px] sm:text-[100px] p-3 sm:p-6 text-primary `,
                 })}
               </div>
-              <div className="mt-4 text-secondary text-[10px] sm:text-[14px]">
+              <div className="mt-4 text-secondary text-[10px] sm:text-sm">
                 {val.title}
               </div>
             </div>
